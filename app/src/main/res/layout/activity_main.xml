@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/backgroundImage"
+
+		android:scaleType="centerCrop"
+		/>
+<android.support.v4.widget.DrawerLayout
+
+	android:id="@+id/drawer_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	tools:openDrawer="end"
+>
+
+
+	<android.support.design.widget.CoordinatorLayout
+
+		android:id="@+id/main"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/adsBackground"
+
+		>
+
+		<android.support.design.widget.AppBarLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:theme="@style/AppTheme.AppBarOverlay"
+
+			>
+
+
+			<android.support.v7.widget.Toolbar
+				android:id="@+id/toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="?attr/actionBarSize"
+				android:background="?attr/colorPrimary"
+				app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+		</android.support.design.widget.AppBarLayout>
+
+
+		<!--<FrameLayout-->
+			<!--android:layout_width="match_parent"-->
+			<!--android:layout_height="match_parent"-->
+			<!--android:id="@+id/container"-->
+			<!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+			<!--/>-->
+
+
+
+		<android.support.v7.widget.RecyclerView
+
+			android:id="@+id/list"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			app:layout_behavior="@string/appbar_scrolling_view_behavior"
+			tools:listitem="@layout/item_main_list"
+
+			/>
+		<ProgressBar
+			style="?android:attr/progressBarStyleLarge"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:id="@+id/progressBar"
+			/>
+
+		<com.tytosoft.delivery.views.FABwithText
+			android:id="@+id/fab"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:tint="@color/white"
+			android:layout_gravity="bottom|end"
+			android:layout_margin="@dimen/fab_margin"
+			android:background="@color/defaultPrimary"
+			android:clickable="true"
+			android:src="@drawable/ic_korzina"
+			app:layout_behavior="com.tytosoft.delivery.behavior.FABScrollBehavior"
+			/>
+
+
+	</android.support.design.widget.CoordinatorLayout>
+
+	<android.support.design.widget.NavigationView
+		android:id="@+id/nav_zakaz"
+		android:layout_width="@dimen/zakaz_board_width"
+		android:layout_height="match_parent"
+		android:layout_gravity="end"
+		android:background="#E1E1E1"
+		android:fitsSystemWindows="false"
+
+		>
+
+		<fragment
+			android:id="@+id/zakazFragment"
+			android:name="com.tytosoft.delivery.fragments.ZakazBarFragment"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			tools:layout="@layout/nav_zakaz_bar"/>
+	</android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>
+</FrameLayout>

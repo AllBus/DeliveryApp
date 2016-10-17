@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorPrimary">#7BAE37</color>
+	<color name="colorPrimaryDark">#558b2f</color>
+	<color name="colorAccent">#FF4081</color>
+	<color name="defaultPrimary">#7BAE37</color>
+	<color name="adsBackground">#FFEBEBEB</color>
+	<color name="adsDotUnselect">#FFD7D7D7</color>
+	<color name="adsDotSelect">#FFFFFFFF</color>
+	<color name="unselectCreateZakazIndicator">#FFFFFFFF</color>
+	<color name="createZakazButtonText">#FF7BAE37</color>
+	<color name="white">#FFFFFFFF</color>
+	<color name="transparent">#00FFFFFF</color>
+	<color name="transparentPress">#20E0E0E0</color>
+	<color name="defaultRipple">#1f000000</color>
+	<color name="black">#FF000000</color>
+
+	<color name="colorBtnTint">#FFFFFFFF</color>
+	<color name="colorBtnFill">@color/defaultPrimary</color>
+	<color name="colorBtnStroke">@color/defaultPrimary</color>
+	<color name="colorBtnRipple">@color/defaultRipple</color>
+	<color name="colorBtnFillPress">@color/colorPrimaryDark</color>
+	<color name="colorBtnStrokePress">@color/colorPrimaryDark</color>
+	<color name="colorBtnFillDisable">#A0CACACA</color>
+	<color name="colorBtnStrokeDisable">#A0CACACA</color>
+
+	<color name="borderBtnFill">#EBEBEB</color>
+	<color name="borderBtnFillDisable">#A0CACACA</color>
+	<color name="borderBtnFillPress">@color/transparentPress</color>
+
+	<color name="borderWhiteBtnFill">@color/white</color>
+	<color name="borderWhiteBtnFillDisable">#A0CACACA</color>
+	<color name="borderWhiteBtnFillPress">@color/transparentPress</color>
+
+	<color name="whiteBtnText">@color/white</color>
+	<color name="whiteBtnTint">#FFFFFFFF</color>
+	<color name="whiteBtnFill">@color/defaultPrimary</color>
+	<color name="whiteBtnStroke">@color/white</color>
+	<color name="whiteBtnRipple">@color/defaultRipple</color>
+	<color name="whiteBtnFillPress">@color/transparentPress</color>
+	<color name="whiteBtnStrokePress">@color/colorPrimaryDark</color>
+	<color name="whiteBtnFillDisable">#A0CACACA</color>
+	<color name="whiteBtnStrokeDisable">#A0CACACA</color>
+
+
+	<color name="translucent_scrim_top">#26000000</color>
+	<color name="translucent_scrim_top_center">#0C000000</color>
+	<color name="translucent_scrim_bottom">#2A000000</color>
+	<color name="translucent_scrim_bottom_center">#0D000000</color>
+	<color name="dashDivider">#acacac</color>
+	<color name="orderBack">#e7e7e7</color>
+	<color name="orderStatus">@color/colorPrimary</color>
+</resources>

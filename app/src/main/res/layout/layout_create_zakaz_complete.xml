@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:tools="http://schemas.android.com/tools"
+				android:id="@+id/completeLayout"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="@color/defaultPrimary"
+				android:orientation="vertical"
+				android:visibility="gone"
+				tools:visibility="visible"
+				android:clickable="true"
+
+	>
+	<ProgressBar
+		style="?android:attr/progressBarStyleLarge"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/progressBar"
+		android:layout_centerInParent="true"/>
+	<LinearLayout
+		android:layout_width="240dp"
+		android:layout_height="wrap_content"
+		android:id="@+id/layoutResult"
+		android:layout_centerInParent="true"
+		android:orientation="vertical"
+		>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/resultTitle"
+			android:text="@string/createZakazCompleteName"
+			style="@style/createZakazCompleteText"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:id="@+id/resultMessage"
+			android:text="@string/createZakazCompleteText"
+
+			style="@style/createZakazCompleteText"
+			/>
+
+
+
+		<Button
+			android:id="@+id/completeBtn"
+			style="@style/WhiteButton"
+			android:textColor="@color/white"
+			android:layout_width="@dimen/widthBtnCreateZakaz"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginTop="75dp"
+
+			android:text="@string/createZakazCompleteBtn"
+
+			/>
+	</LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="createZakazPhoneName">Введите ваш телефон:</string>
+	<string name="createZakazPhoneHint">""</string>
+
+	<string name="createZakazFioName">Ваше имя:</string>
+	<string name="createZakazFioHint">""</string>
+
+	<string name="createZakazAddressName">Ваш адрес:</string>
+	<string name="createZakazAddressHint">""</string>
+
+	<string name="createZakazNextBtnNext">Далее</string>
+	<string name="createZakazNextBtnDone">Готово</string>
+
+	<string name="createZakazCompleteName">Заказ оформлен</string>
+	<string name="createZakazCompleteText">Ждите звонка оператора для подтверждения</string>
+	<string name="createZakazErrorName">Ошибка</string>
+	<string name="createZakazErrorText">Не удалось оформить заказ. Проверьте подключение к интернету.</string>
+	<string name="createZakazCompleteBtn">Хорошо</string>
+
+</resources>

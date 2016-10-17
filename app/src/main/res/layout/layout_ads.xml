@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  xmlns:app="http://schemas.android.com/apk/res-auto"
+			  android:orientation="vertical"
+			  android:layout_width="match_parent"
+			  android:layout_height="wrap_content"
+			  android:id="@+id/adsLayout"
+			  android:background="@color/adsBackground"
+	>
+	<!--<android.support.wearable.view.GridViewPager-->
+		<!--android:layout_width="match_parent"-->
+		<!--android:layout_height=""@dimen/ads_data_height"-->
+		<!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+		<!--android:id="@+id/adsList"-->
+		<!--/>-->
+	<android.support.v4.view.ViewPager
+		android:id="@+id/adsList"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/ads_data_height"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+	<com.tytosoft.badgesapp.views.dots.DotIndicator
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/adsIndicator"
+		android:layout_gravity="center"
+		app:unselectedDotDiameter="8dp"
+		app:selectedDotDiameter="10dp"
+		app:spacingBetweenDots="8dp"
+		app:unselectedDotColor="@color/adsDotUnselect"
+		app:selectedDotColor="@color/adsDotSelect"
+		android:paddingTop="4dp"
+		android:paddingBottom="16dp"
+	/>
+</LinearLayout>

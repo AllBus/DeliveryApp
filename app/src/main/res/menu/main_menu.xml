@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item android:id="@+id/actionCall"
+		  android:icon="@drawable/ring"
+		  app:showAsAction="always"
+		  android:title="@string/callMenu"
+	/>
+	<item android:id="@+id/actionProfile"
+		  android:icon="@drawable/profile"
+		  app:showAsAction="always"
+		  android:title="@string/profileMenu"
+		/>
+	<!--<item android:id="@+id/tashMenu"-->
+		  <!--android:icon="@drawable/tash_66"-->
+		  <!--app:showAsAction="always"-->
+		  <!--android:title="@string/tashMenu"-->
+		<!--/>-->
+	<item android:id="@+id/actionZakaz"
+		  android:icon="@drawable/zakazi"
+		  app:showAsAction="always"
+		  android:title="@string/zakaziMenu"
+		/>
+</menu>

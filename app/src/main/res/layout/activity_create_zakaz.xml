@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:animateLayoutChanges="true"
+
+	>
+
+<RelativeLayout
+
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+
+	android:background="@color/adsBackground"
+	tools:context="com.kos.delivery.ActivityCreateZakaz">
+
+
+
+	<android.support.v4.view.ViewPager
+		android:id="@+id/pager"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		/>
+
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:background="@color/transparent"
+		app:popupTheme="@style/AppTheme.PopupOverlay">
+
+	</android.support.v7.widget.Toolbar>
+
+	<Button
+		android:id="@+id/nextBtn"
+		android:layout_width="@dimen/widthBtnCreateZakaz"
+
+		android:layout_height="wrap_content"
+
+		tools:text="Далее"
+		android:layout_below="@+id/indicator"
+		style="@style/CreateZakazNextButton"
+
+		/>
+	<com.tytosoft.badgesapp.views.dots.ShaperIndicator
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/indicator"
+		app:selectedDotDiameter="4dp"
+		app:selectedDotWidth="48dp"
+		app:unselectedDotDiameter="4dp"
+		app:unselectedDotWidth="48dp"
+		app:selectedDotColor="@color/defaultPrimary"
+		app:unselectedDotColor="@color/unselectCreateZakazIndicator"
+		app:dotIconHeight="24dp"
+
+		style="@style/CreateZakazIndicator"
+
+		/>
+
+
+
+</RelativeLayout>
+
+	<include layout="@layout/layout_create_zakaz_complete"
+			 tools:visibility="invisible"
+		/>
+</RelativeLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			 android:id="@+id/selectableItem"
+			 style="@style/CardClickable"
+			 android:layout_width="wrap_content"
+			 android:layout_height="wrap_content"
+	>
+
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+					xmlns:tools="http://schemas.android.com/tools"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="vertical"
+
+		>
+
+		<ImageView
+			android:id="@+id/image"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginBottom="30dp"
+			android:scaleType="centerCrop"
+			/>
+
+		<RelativeLayout
+			android:id="@+id/dataLayout"
+			android:layout_width="300dp"
+			android:layout_height="70dp"
+			android:layout_alignParentBottom="true"
+			android:layout_centerHorizontal="true"
+			android:background="@drawable/ads_info_back"
+			>
+
+			<TextView
+				android:id="@+id/discount"
+				style="@style/discount"
+				android:layout_width="wrap_content"
+
+				android:layout_height="wrap_content"
+
+				android:layout_marginStart="16dp"
+				tools:text="-50%"/>
+
+			<TextView
+
+				android:id="@+id/name"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_alignStart="@id/discount"
+
+				android:layout_below="@id/discount"
+				android:layout_toStartOf="@+id/addToTashBtn"
+
+
+				android:ellipsize="end"
+				android:gravity="center_vertical"
+				android:lines="1"
+				android:maxLines="2"
+				android:textSize="16sp"
+				android:textStyle="bold"
+				tools:text="Сеты с европейскими суши pltcm gpdaut ochen vkusno dajh"
+				/>
+
+			<android.support.v7.widget.AppCompatButton
+				android:id="@+id/addToTashBtn"
+				style="@style/AddProductButton"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentBottom="true"
+				android:layout_alignParentEnd="true"
+
+
+				tools:text="1220 \u20bd"
+
+				/>
+
+			<TextView
+				android:id="@+id/countLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignEnd="@id/name"
+				android:layout_alignStart="@id/discount"
+
+				android:layout_below="@id/name"
+				android:drawableLeft="@drawable/ic_amount"
+				android:drawablePadding="4dp"
+
+				android:gravity="center_vertical"
+				android:maxLines="1"
+				android:paddingBottom="8dp"
+				android:textSize="12sp"
+				tools:text="48 шт. / 1100 гр. bolshe ne po"
+				/>
+
+			<TextView
+				android:id="@+id/oldPrice"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+
+				android:layout_above="@id/addToTashBtn"
+				android:layout_alignEnd="@id/addToTashBtn"
+				android:layout_marginEnd="16dp"
+
+				android:textSize="10sp"
+				tools:text="126 \u20bd"
+				/>
+		</RelativeLayout>
+
+	</RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,4 @@
+<resources>
+	<dimen name="ads_data_height">200dp</dimen>
+	<dimen name="marginTopCreateZakazButton">100dp</dimen>
+</resources>

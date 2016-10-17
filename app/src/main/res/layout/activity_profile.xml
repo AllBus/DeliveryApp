@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/main"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/adsBackground"
+
+	>
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:theme="@style/AppTheme.AppBarOverlay"
+
+		>
+
+
+		<android.support.v7.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:background="?attr/colorPrimary"
+
+			app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+			</android.support.v7.widget.Toolbar>
+
+	</android.support.design.widget.AppBarLayout>
+
+
+
+<android.support.v4.widget.NestedScrollView
+
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+
+	app:layout_behavior="@string/appbar_scrolling_view_behavior"
+>
+<LinearLayout
+
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:paddingBottom="@dimen/activity_vertical_margin"
+	android:paddingLeft="@dimen/activity_horizontal_margin"
+	android:paddingRight="@dimen/activity_horizontal_margin"
+	android:paddingTop="@dimen/activity_vertical_margin"
+	android:gravity="center_horizontal"
+	android:orientation="vertical"
+	android:id="@+id/topLayout"
+	>
+
+
+	<TextView
+		android:id="@+id/profileName"
+		android:drawableStart="@drawable/fio"
+		tools:text="Мой name"
+
+		style="@style/profileText"/>
+	<TextView
+		android:id="@+id/profilePhone"
+		android:drawableStart="@drawable/tel"
+		tools:text="Мой телефон"
+
+		style="@style/profileText"/>
+	<TextView
+		android:id="@+id/profileAddress"
+		android:drawableStart="@drawable/geo"
+		tools:text="Мой address"
+
+		style="@style/profileText"/>
+
+</LinearLayout>
+</android.support.v4.widget.NestedScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

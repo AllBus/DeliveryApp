@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+
+	android:gravity="center_horizontal"
+	android:orientation="vertical"
+
+	android:weightSum="10"
+	tools:context="com.tytosoft.delivery.KorzinaActivity"
+	>
+
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:theme="@style/AppTheme.AppBarOverlay"
+
+		>
+
+		<android.support.v7.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:background="?attr/colorPrimary"
+
+			app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+		</android.support.v7.widget.Toolbar>
+	</android.support.design.widget.AppBarLayout>
+
+	<TextView
+		android:id="@+id/statusDate"
+		style="@style/item_product_text"
+		android:layout_width="match_parent"
+		android:textSize="14sp"
+		android:paddingLeft="@dimen/mainPadding"
+		android:paddingRight="@dimen/mainPadding"
+		tools:text="08.09.16, 19:01"/>
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="3dp"
+		android:layout_marginLeft="@dimen/mainPadding"
+		android:layout_marginRight="@dimen/mainPadding"
+		android:background="@drawable/dash_divider"/>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="@dimen/mainPadding"
+		>
+
+		<TextView
+			android:id="@+id/statusName"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:gravity="center_vertical"
+			android:text="@string/ticketZakazStatus"
+			android:textSize="14sp"
+
+			/>
+
+		<TextView
+			android:id="@+id/statusText"
+			android:layout_width="match_parent"
+
+			android:layout_height="wrap_content"
+			android:layout_alignParentEnd="true"
+			android:layout_marginStart="@dimen/mainPadding"
+			android:gravity="end"
+			android:textSize="18sp"
+			tools:text="Ожидайте звонка оператора"
+			android:textColor="@color/orderStatus"
+			android:layout_toEndOf="@+id/statusName"/>
+	</RelativeLayout>
+
+
+
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/list"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="10"
+		tools:listitem="@layout/item_ticket_product"
+		android:background="@color/orderBack"
+		/>
+
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:padding="@dimen/mainPadding"
+		>
+
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="end"
+			android:layout_weight="1"
+			android:gravity="start"
+			android:minWidth="160dp"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="start"
+				android:text="@string/deliveryAddress"
+				android:textSize="14sp"
+				/>
+
+			<TextView
+				android:id="@+id/deliveryAddress"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="start"
+				android:textSize="18sp"
+				tools:text="Ljcnfdbnm yflo cuda вп ап п в пвп"
+				/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="end"
+			android:gravity="end"
+			android:minWidth="160dp"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="end"
+				android:text="@string/deliveryCost"
+				android:textSize="14sp"
+				/>
+
+			<TextView
+				android:id="@+id/deliveryCost"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="end"
+				android:textSize="18sp"
+				tools:text="1 350 h"
+				/>
+		</LinearLayout>
+	</LinearLayout>
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="3dp"
+		android:layout_marginLeft="@dimen/mainPadding"
+		android:layout_marginRight="@dimen/mainPadding"
+		android:background="@drawable/dash_divider"/>
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="@dimen/mainPadding"
+		>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="end"
+			android:text="@string/fullOrderCost"
+			android:textSize="14sp"
+			android:textStyle="bold"
+			/>
+
+		<TextView
+			android:id="@+id/completeCost"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="end"
+			android:gravity="end"
+			android:textSize="18sp"
+			tools:text="1 350 h"
+			/>
+	</FrameLayout>
+
+
+	<android.support.v7.widget.AppCompatButton
+		android:id="@+id/callBtn"
+		style="@style/WhiteButton"
+		android:layout_width="320dp"
+
+		android:layout_height="wrap_content"
+		android:drawableStart="@drawable/ic_ring_white"
+		android:text="@string/callBtn"
+
+
+		android:textColor="@color/white"
+
+
+		/>
+</LinearLayout>

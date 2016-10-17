@@ -1,0 +1,50 @@
+<resources>
+	<string name="app_name">Delivery</string>
+	<string name="callMenu">Позвонить</string>
+	<string name="profileMenu">Профиль</string>
+	<string name="tashMenu">Корзина</string>
+	<string name="zakaziMenu">Мои заказы</string>
+	<string name="title_activity_zakaz">ZakazActivity</string>
+	<string name="title_activity_product">ProductActivity</string>
+	<string name="large_text">"Мобильное приложение Доставка от компании Tytosoft позволяет легко и просто оформить и оплатить заказ без необходимости стоять в очереди.
+
+Как сделать заказ в приложении Доставка:
+Выберите понравившиеся позиции из нашего меню.
+Добавьте их в корзину и перейдите на экран оформления заказа.
+Добавьте свою контактную информацию для первого заказа: Имя, Номер телефона и Адрес доставки.
+Нажмите кнопку Заказать.
+После этого, ваш заказ поступит оператору и вам останется только дождаться курьера.
+
+E-Mail: info@tytosoft.ru
+
+Сайт: http://tytosoft.ru"
+	</string>
+	<string name="action_settings">Settings</string>
+
+
+	<string name="ticketZakazStatus">Статус заказа:</string>
+	<string name="dostavka">Доставка</string>
+	<string name="aboutActivityTitle">О программе</string>
+	<string name="showAboutBtn">О программе</string>
+	<string name="profileActivityTitle">Профиль</string>
+	<string name="tableName">Наименование</string>
+	<string name="amount">Кол-во</string>
+	<string name="price">Цена</string>
+	<string name="completeCost">Общая сумма</string>
+	<string name="createZakaz">Оформить заказ</string>
+	<string name="titleKorzina">Корзина</string>
+	<string name="dostavkaMinFreePrefix">"от "</string>
+	<string name="clearKorzina">Очистить корзину</string>
+
+	<string name="alertClearKorzinaTitle">Предупреждение</string>
+	<string name="alertClearKorzinaText">"Удалить все товары из корзины?"</string>
+	<string name="snackNoInternet">Нет подключения</string>
+	<string name="snackNoInternetRetry">Повторить</string>
+	<string name="snackAddToKorzina">Добавлено в корзину</string>
+	<string name="snackAddToKorzinaGoTo">Перейти</string>
+	<string name="RetryZakaz">Повторить заказ</string>
+	<string name="callBtn">Связаться с оператором</string>
+	<string name="deliveryAddress">Адрес доставки:</string>
+	<string name="fullOrderCost">Общая стоимость заказа</string>
+	<string name="deliveryCost">Стоимость доставки</string>
+</resources>

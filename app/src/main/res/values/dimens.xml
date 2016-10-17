@@ -1,0 +1,17 @@
+<resources>
+	<!-- Default screen margins, per the Android Design guidelines. -->
+	<dimen name="activity_horizontal_margin">4dp</dimen>
+	<dimen name="activity_vertical_margin">4dp</dimen>
+	<dimen name="fab_margin">16dp</dimen>
+	<dimen name="app_bar_height">240dp</dimen>
+	<dimen name="text_margin">24dp</dimen>
+	<dimen name="zakaz_board_width">275dp</dimen>
+	<dimen name="ads_data_height">140dp</dimen>
+	<dimen name="marginTopCreateZakazButton">280dp</dimen>
+	<dimen name="textSizeCreateZakazComplete">18sp</dimen>
+	<dimen name="widthBtnCreateZakaz">146dp</dimen>
+	<dimen name="colorBtnCorners">4dp</dimen>
+	<dimen name="catalogItemWidth">360dp</dimen>
+	<dimen name="zakazIconHeight">64dp</dimen>
+	<dimen name="mainPadding">8dp</dimen>
+</resources>
