@@ -10,6 +10,7 @@ import org.json.JSONObject
   */
 object OrderStatusModel{
 	lazy val NULL= new OrderStatusModel{
+
 		override def isNull=true
 	}
 }
@@ -33,7 +34,8 @@ class OrderStatusModel extends BaseModel with ISave{
 	def getStatus=status
 	def getColor=color
 
-	override def getName=title
+	override def getName="Ожидайте звонка"//todo: Здесь должно быть title
+
 
 	override def save(): JSONObject = {
 		val obj=super.save()

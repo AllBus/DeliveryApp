@@ -1,15 +1,16 @@
 package com.tytosoft.badgesapp.model
 
 import android.util.Log
-import com.google.gson.{GsonBuilder, Gson}
+import com.google.gson.{Gson, GsonBuilder}
 import com.kos.delivery.model.OrderProductModel
 import com.kos.fastuimodule.common.share.{JSONModel, SON}
 import com.kos.fastuimodule.good.common.ID
-import com.tytosoft.badgesapp.model.utils.{ISave, SONS}
+import com.tytosoft.badgesapp.model.utils.{ISave, ModeLUtils, SONS}
 import com.tytosoft.delivery.data.AppPrefererences
 import com.tytosoft.delivery.model.OrderStatusModel
 import com.tytosoft.delivery.model.data.Korzina
 import org.json.JSONObject
+
 import scala.collection.JavaConversions._
 /**
   * Created by Kos on 13.07.2016.
@@ -21,6 +22,9 @@ object OrderModel{
 }
 
 class OrderModel extends BaseModel with ISave{
+
+	override def getDate: String = ModeLUtils.getDateTimeText(date)
+
 	def this(obj: JSONObject) {
 		this()
 		if (null != obj) baseSON(obj)
@@ -90,4 +94,7 @@ class OrderModel extends BaseModel with ISave{
 	def getAddress=address
 	def size=product.size
 
+	def mkString(sep: String) = {
+		product.mkString(sep)
+	}
 }

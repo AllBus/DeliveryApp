@@ -75,4 +75,6 @@ class OrderProductModel extends BaseModel  with Cloneable{
 		SON.put(obj,"price",price)
 		obj
 	}
+
+	override def toString = s"$getName × $count"
 }

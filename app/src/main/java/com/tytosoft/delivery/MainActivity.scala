@@ -28,18 +28,18 @@ class MainActivity extends NavActivity with OnClickListener {
 
 	import DataStore._
 
-	var adsId:ID = ListModel.NONE_ID
+	var adsId: ID = ListModel.NONE_ID
 	lazy val list = find[RecyclerView](R.id.list)
 
-	private[this] lazy val progressBar:ProgressBar=find(R.id.progressBar)
+	private[this] lazy val progressBar: ProgressBar = find(R.id.progressBar)
 
 	lazy val adapter = new HeaderSimpleAdapter(
 		this,
 		R.layout.item_main_full,
 		R.layout.item_main_list,
 		R.layout.layout_ads,
-		new SimpleHolder(_,itemClick),
-		new AdsItemHolder(_, itemClick,btnClick)
+		new SimpleHolder(_, itemClick),
+		new AdsItemHolder(_, itemClick, btnClick)
 	)
 
 	override def setupActivity(savedInstanceState: Bundle): Unit = {
@@ -48,8 +48,8 @@ class MainActivity extends NavActivity with OnClickListener {
 
 		Seq(R.id.fab).foreach(addClick(_, this))
 
-		listId=getListTop
-		adsId=getListAds
+		listId = getListTop
+		adsId = getListAds
 
 		list.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false))
 		list.setAdapter(adapter)
@@ -79,22 +79,26 @@ class MainActivity extends NavActivity with OnClickListener {
 
 		item.getItemId match {
 			case R.id.`actionCall` ⇒
-				val phone = preferences.phone
-				val intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null))
-				startActivity(intent);
+				try {
+					val phone = preferences.phone
+					val intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null))
+					startActivity(intent);
+				} catch {
+					case _: Throwable ⇒
+				}
 			case R.id.`actionProfile` ⇒
 				show(classOf[ProfileActivity])
 
-//				application().badgeCount += 1
-//				val success = ShortcutBadger.applyCount(this, application().badgeCount)
+			//				application().badgeCount += 1
+			//				val success = ShortcutBadger.applyCount(this, application().badgeCount)
 
 
 			//				case R.id.tashMenu ⇒
 			//					application().badgeCount-=1
 			//					ShortcutBadger.applyCount(this,application().badgeCount)
 			case R.id.`actionZakaz` ⇒
-//				ShortcutBadger.removeCount(this);
-//				application().zakazSize = 0
+				//				ShortcutBadger.removeCount(this);
+				//				application().zakazSize = 0
 
 				updateKorzina()
 				toggleZakazBar()
@@ -136,14 +140,14 @@ class MainActivity extends NavActivity with OnClickListener {
 	@Subscribe
 	def updateList(updater: ListItemUpdate): Unit = {
 		//LogD("Update list "+updater.id)
-		listId=getListTop
-		adsId=getListAds
+		listId = getListTop
+		adsId = getListAds
 
 		if (updater.id.contains(listId)) {
 			loadFirstItems(listId)
 			updateCatalog()
 		}
-		if (updater.id.contains(adsId)){
+		if (updater.id.contains(adsId)) {
 			loadFirstItems(adsId)
 			adapter.updateHeader(lists.get(adsId))
 			adapter.notifyHeader()
@@ -153,12 +157,12 @@ class MainActivity extends NavActivity with OnClickListener {
 
 
 	@Subscribe
-	def endLoad(updater: EndLoadUpdate): Unit ={
-		if (updater.infoType==Program.API_LIST){
+	def endLoad(updater: EndLoadUpdate): Unit = {
+		if (updater.infoType == Program.API_LIST) {
 			updateProgress()
 		}
-		if (updater.infoType==Program.API_ADS){
-		//	LogD("Update ads")
+		if (updater.infoType == Program.API_ADS) {
+			//	LogD("Update ads")
 			adapter.notifyHeader()
 		}
 
@@ -166,8 +170,8 @@ class MainActivity extends NavActivity with OnClickListener {
 
 	override def onStart(): Unit = {
 		super.onStart()
-		listId=getListTop
-		adsId=getListAds
+		listId = getListTop
+		adsId = getListAds
 		updateCatalog()
 	}
 
@@ -190,12 +194,12 @@ class MainActivity extends NavActivity with OnClickListener {
 
 	def updateProgress() = {
 
-		if (adapter.getList.isNull ){
-			if (lists.isLoading(-1)){
+		if (adapter.getList.isNull) {
+			if (lists.isLoading(-1)) {
 				progressBar.setVisibility(View.VISIBLE)
-			}else{
+			} else {
 				progressBar.setVisibility(View.GONE)
-				val snackBar=Snackbar.make(list,R.string.snackNoInternet,Snackbar.LENGTH_INDEFINITE)
+				val snackBar = Snackbar.make(list, R.string.snackNoInternet, Snackbar.LENGTH_INDEFINITE)
 				snackBar.setAction(R.string.snackNoInternetRetry,
 					new OnClickListener {
 						override def onClick(view: View): Unit = {
@@ -207,7 +211,7 @@ class MainActivity extends NavActivity with OnClickListener {
 
 			}
 
-		}else{
+		} else {
 			progressBar.setVisibility(View.GONE)
 		}
 	}
@@ -221,13 +225,13 @@ class MainActivity extends NavActivity with OnClickListener {
 
 	}
 
-	def reloadList(): Unit ={
+	def reloadList(): Unit = {
 		ProgramRun.getSystem()
 		ProgramRun.getLists()
 	}
 
-	override def isProduct(model: ProductModel)={
-		adapter.getList.getKind match{
+	override def isProduct(model: ProductModel) = {
+		adapter.getList.getKind match {
 			case Program.LIST_SECTION ⇒ false
 			case _ ⇒ true
 		}

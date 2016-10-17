@@ -8,7 +8,7 @@ import android.view.View.OnClickListener
 /**
   * Created by Kos on 19.07.2016.
   */
-class ItemHolder[U](itemView:View,itemClick:OnClickListener) extends RecyclerView.ViewHolder(itemView){
+class ItemHolder[U](topView:View,itemClick:OnClickListener) extends RecyclerView.ViewHolder(topView){
 
 	@inline def find[T](@IdRes id: Int) = itemView.findViewById(id).asInstanceOf[T]
 

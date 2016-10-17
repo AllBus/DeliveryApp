@@ -12,7 +12,7 @@ import com.tytosoft.delivery.R
 /**
   * Created by Kos on 06.07.2016.
   */
-class SimpleHolder(itemView:View,itemClick:OnClickListener) extends RecyclerView.ViewHolder(itemView){
+class SimpleHolder(topView:View,itemClick:OnClickListener) extends RecyclerView.ViewHolder(topView){
 
 	@inline def find[T](@IdRes id: Int) = itemView.findViewById(id).asInstanceOf[T]
 
@@ -24,9 +24,10 @@ class SimpleHolder(itemView:View,itemClick:OnClickListener) extends RecyclerView
 
 	def bind(position:Int,element:IEntity){
 		itemView.setTag(element)
-		U.image(image,element.getImage)
-		U.text(name,element.getName)
+		if (image!=null)
+			U.image(image,element.getImage)
 
+		US.text(name,element.getName)
 		US.text(text,element.getInfo)
 
 

@@ -19,7 +19,7 @@ class FullProductHolder(itemView: View, clickAddToTash: OnClickListener, itemCli
 
 	val dataLayout= find[View](R.id.dataLayout)
 	val discount = find[TextView](R.id.discount)
-	val addToTash = find[Button](R.id.addToTashBtn)
+	val addToTash = find[TextView](R.id.addToTashBtn)
 	val oldPrice = find[TextView](R.id.oldPrice)
 	if (addToTash!=null)
 		addToTash.setOnClickListener(clickAddToTash)

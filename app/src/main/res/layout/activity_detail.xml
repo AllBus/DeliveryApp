@@ -11,6 +11,8 @@
 
 	android:weightSum="10"
 	tools:context="com.tytosoft.delivery.KorzinaActivity"
+	android:id="@+id/topLayout"
+
 	>
 
 	<android.support.design.widget.AppBarLayout
@@ -33,13 +35,15 @@
 	</android.support.design.widget.AppBarLayout>
 
 	<TextView
+		android:layout_marginTop="4dp"
 		android:id="@+id/statusDate"
 		style="@style/item_product_text"
 		android:layout_width="match_parent"
-		android:textSize="14sp"
 		android:paddingLeft="@dimen/mainPadding"
 		android:paddingRight="@dimen/mainPadding"
+		android:textSize="14sp"
 		tools:text="08.09.16, 19:01"/>
+
 	<View
 		android:layout_width="match_parent"
 		android:layout_height="3dp"
@@ -71,23 +75,42 @@
 			android:layout_height="wrap_content"
 			android:layout_alignParentEnd="true"
 			android:layout_marginStart="@dimen/mainPadding"
+			android:layout_toEndOf="@+id/statusName"
 			android:gravity="end"
-			android:textSize="18sp"
-			tools:text="Ожидайте звонка оператора"
 			android:textColor="@color/orderStatus"
-			android:layout_toEndOf="@+id/statusName"/>
+			android:textSize="18sp"
+			tools:text="Ожидайте звонка оператора"/>
 	</RelativeLayout>
 
 
-
-	<android.support.v7.widget.RecyclerView
-		android:id="@+id/list"
+	<ScrollView
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
 		android:layout_weight="10"
-		tools:listitem="@layout/item_ticket_product"
-		android:background="@color/orderBack"
-		/>
+		>
+
+		<LinearLayout
+			android:id="@+id/productLList"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/orderBack"
+			android:divider="@drawable/dash_divider"
+			android:orientation="vertical"
+			android:showDividers="middle"
+			android:dividerPadding="@dimen/mainPadding"
+
+			>
+
+		</LinearLayout>
+	</ScrollView>
+	<!--<android.support.v7.widget.RecyclerView-->
+	<!--android:id="@+id/list"-->
+	<!--android:layout_width="match_parent"-->
+	<!--android:layout_height="0dp"-->
+	<!--android:layout_weight="10"-->
+	<!--tools:listitem="@layout/item_ticket_product"-->
+	<!--android:background="@color/orderBack"-->
+	<!--/>-->
 
 
 	<LinearLayout
@@ -141,7 +164,7 @@
 				/>
 
 			<TextView
-				android:id="@+id/deliveryCost"
+				android:id="@+id/dostavkaPrice"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:gravity="end"
@@ -174,7 +197,7 @@
 			/>
 
 		<TextView
-			android:id="@+id/completeCost"
+			android:id="@+id/summa"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="end"

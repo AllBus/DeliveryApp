@@ -101,7 +101,7 @@
 				android:layout_alignEnd="@id/addToTashBtn"
 				android:layout_marginEnd="16dp"
 
-				android:textSize="10sp"
+				android:textSize="12sp"
 				tools:text="126 \u20bd"
 				/>
 		</RelativeLayout>

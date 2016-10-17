@@ -16,7 +16,7 @@ import com.tytosoft.delivery.common.utils.UU
 /**
   * Created by Kos on 06.07.2016.
   */
-class OrderProductHolder(itemView: View,val itemClick:OnClickListener) extends ItemHolder[OrderModel](itemView, null) {
+class OrderProductHolder(topView: View,val itemClick:OnClickListener) extends ItemHolder[OrderModel](topView, null) {
 
 //	val name=find[TextView](R.id.name)
 //	val count=find[TextView](R.id.count)
@@ -24,9 +24,12 @@ class OrderProductHolder(itemView: View,val itemClick:OnClickListener) extends I
 //	val active=find[View](R.id.active)
 	val statusText=find[TextView](R.id.statusText)
 	val dostavkaPrice=find[TextView](R.id.dostavkaPrice)
+	val statusDate = find[TextView](R.id.statusDate)
 	val summa=find[TextView](R.id.summa)
 	val productLList=find[ViewGroup](R.id.productLList)
-	val retryBtn=find[Button](R.id.retryBtn)
+	val nextBtn=find[View](R.id.nextBtn)
+	val deliveryAddress= find[TextView](R.id.deliveryAddress)
+	val itemListLabel =find[TextView](R.id.itemListLabel)
 
 	val listHolder=new ListHolder[View](productLList,R.layout.item_ticket_product,LayoutInflater.from(itemView.getContext),
 		{x ⇒ x})
@@ -34,15 +37,24 @@ class OrderProductHolder(itemView: View,val itemClick:OnClickListener) extends I
 	val backDrawable=new TicketDrawable(12,6*ResHelper.dp(itemView.getContext))
 	itemView.setBackground(backDrawable)
 	//val backDrawable=new TicketDrawable(5,6*ResHelper.dp(itemView.getContext))
-	retryBtn.setOnClickListener(itemClick)
+	if (nextBtn!=null) {
+		nextBtn.setOnClickListener(itemClick)
+	}
 
 	override def bind(position: Int, elem: OrderModel) {
 		super.bind(position,elem)
 
 
 		statusText.setText(elem.getStatus.getName)
-		dostavkaPrice.setText( DataStore.preferences.price(elem.deliveryCost))
-		summa.setText(DataStore.preferences.price(elem.getSumma))
+		if (dostavkaPrice!=null) {
+			dostavkaPrice.setText(DataStore.preferences.price(elem.deliveryCost))
+		}
+		if (summa!=null) {
+			summa.setText(DataStore.preferences.price(elem.getSumma))
+		}
+		if (statusDate!=null){
+			statusDate.setText(elem.getDate)
+		}
 
 		var b=true
 		listHolder.regenerate(elem.size,(view,pos)⇒{
@@ -58,8 +70,20 @@ class OrderProductHolder(itemView: View,val itemClick:OnClickListener) extends I
 			view.setTag(product)
 		})
 
-		retryBtn.setEnabled(b)
-		retryBtn.setTag(elem)
+		if (itemListLabel!=null){
+			itemListLabel.setText(elem.mkString(", "))
+		}
+
+		if (deliveryAddress!=null){
+			U.text(deliveryAddress,elem.getAddress)
+		}
+
+		if (nextBtn!=null) {
+			nextBtn.setEnabled(b)
+			nextBtn.setTag(elem)
+
+		}
+
 
 
 //		U.text(name,product.getName)

@@ -73,10 +73,10 @@ class NavActivity extends BusActivity{
 	}
 
 	def setupWallpaper(): Unit ={
-		val wallpaperManager = WallpaperManager.getInstance(this)
-		val wallpaperDrawable = wallpaperManager.getFastDrawable
-		find[ImageView](R.id.backgroundImage).setImageDrawable(wallpaperDrawable)
-		//drawer.setBackground(wallpaperDrawable)
+//		val wallpaperManager = WallpaperManager.getInstance(this)
+//		val wallpaperDrawable = wallpaperManager.getFastDrawable
+//		find[ImageView](R.id.backgroundImage).setImageDrawable(wallpaperDrawable)
+
 	}
 
 

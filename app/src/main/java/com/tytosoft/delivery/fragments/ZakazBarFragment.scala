@@ -12,9 +12,9 @@ import com.kos.fastuimodule.good.common.bus.EndLoadUpdate
 import com.squareup.otto.Subscribe
 import com.tytosoft.badgesapp.adapters.HistoryOrderAdapter
 import com.tytosoft.badgesapp.model.{OrderModel, ProductModel}
-import com.tytosoft.badgesapp.net.{Program, ProductItemUpdate}
+import com.tytosoft.badgesapp.net.{ProductItemUpdate, Program}
 import com.tytosoft.delivery.model.controler.OrderModelController
-import com.tytosoft.delivery.{R, KorzinaActivity, ProductActivity}
+import com.tytosoft.delivery.{DetailActivity, KorzinaActivity, ProductActivity, R}
 
 /**
   * A simple {@link Fragment} subclass.
@@ -66,8 +66,9 @@ class ZakazBarFragment extends BusFragment with OnRefreshListener {
 			case product: ProductModel ⇒
 				show(classOf[ProductActivity],product.getId)
 			case order:OrderModel ⇒
-				order.addToKorzina( lastKorzina)
-				show(classOf[KorzinaActivity])
+				show(classOf[DetailActivity],order.getId)
+				//order.addToKorzina( lastKorzina)
+				//show(classOf[KorzinaActivity])
 			case _ ⇒
 		}
 	}

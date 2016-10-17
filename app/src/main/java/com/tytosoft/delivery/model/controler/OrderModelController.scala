@@ -8,7 +8,7 @@ import com.tytosoft.badgesapp.model.{ProductModel, OrderModel}
 /**
   * Created by Kos on 21.07.2016.
   */
-class OrderModelController(  finder: ID ⇒ OrderModel) extends IListModel[ID,OrderModel,Seq[ID]]{
+class OrderModelController(finder: ID ⇒ OrderModel) extends IListModel[ID,OrderModel,Seq[ID]]{
 
 
 	override def apply(index: Int) = finder(list(index))
