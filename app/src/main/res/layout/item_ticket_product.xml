@@ -3,50 +3,67 @@
 			  xmlns:tools="http://schemas.android.com/tools"
 			  android:layout_width="match_parent"
 			  android:layout_height="wrap_content"
-			  android:orientation="horizontal"
-			  android:padding="4dp"
-			  android:weightSum="10"
-			  android:background="?android:attr/selectableItemBackground"
+			  android:orientation="vertical"
 	>
 
-	<TextView
-		android:id="@+id/name"
-		style="@style/item_product_text"
-		android:layout_width="0dp"
-		android:layout_weight="6"
-		tools:text="Nazvnie nbora Vkusnii"/>
 
-	<TextView
-		android:id="@+id/count"
-		style="@style/item_product_text"
-		android:gravity="center"
-		android:layout_width="0dp"
-		android:layout_weight="2"
-		tools:text="23"
-		/>
-
-	<FrameLayout
-		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		android:layout_weight="2"
-
-		>
-		<ImageView
-			android:id="@+id/active"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:src="@drawable/ic_disable_16dp"
-			android:scaleType="center"
-			/>
-	<TextView
-		android:id="@+id/price"
-		style="@style/item_product_text"
-
+	<LinearLayout
 		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="?android:attr/selectableItemBackground"
+		android:orientation="horizontal"
+		android:padding="4dp"
+		android:weightSum="10"
+		>
 
-		android:gravity="end"
-		tools:text="2000 H"
+		<TextView
+			android:id="@+id/name"
+			style="@style/item_product_text"
+			android:layout_width="0dp"
+			android:layout_weight="6"
+			tools:text="Nazvnie nbora Vkusnii"/>
 
+		<TextView
+			android:id="@+id/count"
+			style="@style/item_product_text"
+			android:layout_width="0dp"
+			android:layout_weight="2"
+			android:gravity="center"
+			tools:text="23"
+			/>
+
+		<FrameLayout
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="2"
+
+			>
+
+			<ImageView
+				android:id="@+id/active"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:scaleType="center"
+				android:src="@drawable/ic_disable_16dp"
+				/>
+
+			<TextView
+				android:id="@+id/price"
+				style="@style/item_product_text"
+
+				android:layout_width="match_parent"
+
+				android:gravity="end"
+				tools:text="2000 H"
+
+				/>
+		</FrameLayout>
+	</LinearLayout>
+
+	<com.tytosoft.delivery.views.DashedLineView
+		android:layout_width="match_parent"
+		android:layout_height="3dp"
+		android:layout_marginLeft="@dimen/mainPadding"
+		android:layout_marginRight="@dimen/mainPadding"
 		/>
-	</FrameLayout>
 </LinearLayout>

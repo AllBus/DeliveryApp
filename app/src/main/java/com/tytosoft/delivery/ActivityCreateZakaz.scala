@@ -68,6 +68,8 @@ class ActivityCreateZakaz extends BusActivity
 
 		onPageSelected(0)
 		setupToolBarWithBackButton(R.id.toolbar)
+
+		getWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
 		setTitle("")
 	}
 

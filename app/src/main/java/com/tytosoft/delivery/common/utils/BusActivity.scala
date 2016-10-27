@@ -1,5 +1,6 @@
 package com.tytosoft.delivery.common.utils
 
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import com.kos.fastuimodule.good.common.bus.BusProvider
 import com.tytosoft.badgesapp.common.utils.SActivity
@@ -18,5 +19,10 @@ class BusActivity extends AppCompatActivity with SActivity{
 		BusProvider.unregister(this)
 		super.onStop()
 
+	}
+
+	def colorResource(colorRes:Int):Int={
+
+		ContextCompat.getColor(this,colorRes)
 	}
 }

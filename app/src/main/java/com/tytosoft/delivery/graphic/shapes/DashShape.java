@@ -18,13 +18,14 @@ public class DashShape extends RectShape {
 	public DashShape(float radius, Paint pen) {
 		this.radius = radius;
 		this.pen = pen;
+
 	}
 
 	@Override
 	public void draw(Canvas canvas, Paint paint) {
 
 		final RectF r=rect();
-		canvas.drawLine(r.left,r.centerY(),r.right,r.centerY(),paint);
+		canvas.drawLine(r.left,r.centerY(),r.right,r.centerY(),pen);
 
 	}
 

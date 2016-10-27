@@ -25,12 +25,12 @@
 			android:textSize="14sp"
 			tools:text="08.09.16, 19:01"/>
 
-		<View
+		<com.tytosoft.delivery.views.DashedLineView
 			android:layout_width="match_parent"
 			android:layout_height="3dp"
 			android:layout_marginLeft="@dimen/mainPadding"
 			android:layout_marginRight="@dimen/mainPadding"
-			android:background="@drawable/dash_divider"/>
+			/>
 
 		<RelativeLayout
 			android:layout_width="match_parent"
@@ -63,12 +63,12 @@
 				tools:text="Ожидайте звонка оператора"/>
 		</RelativeLayout>
 
-		<View
+		<com.tytosoft.delivery.views.DashedLineView
 			android:layout_width="match_parent"
 			android:layout_height="3dp"
 			android:layout_marginLeft="@dimen/mainPadding"
 			android:layout_marginRight="@dimen/mainPadding"
-			android:background="@drawable/dash_divider"/>
+			/>
 
 		<TextView
 			android:id="@+id/itemListLabel"
@@ -81,12 +81,12 @@
 
 			/>
 
-		<View
+		<com.tytosoft.delivery.views.DashedLineView
 			android:layout_width="match_parent"
 			android:layout_height="3dp"
 			android:layout_marginLeft="@dimen/mainPadding"
 			android:layout_marginRight="@dimen/mainPadding"
-			android:background="@drawable/dash_divider"/>
+			/>
 
 		<FrameLayout
 			android:layout_width="match_parent"

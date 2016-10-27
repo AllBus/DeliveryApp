@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/dataLayout"
+	android:layout_width="300dp"
+	android:layout_height="80dp"
+	android:layout_alignParentBottom="true"
+	android:layout_centerHorizontal="true"
+	android:background="@drawable/ads_info_back"
+	android:padding="@dimen/mainPadding"
+	tools:showIn="@layout/content_product">
+
+
+	<TextView
+		android:id="@+id/addToTashBtn"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentEnd="true"
+		android:textStyle="bold"
+		android:textSize="18sp"
+
+		tools:text="1220 \u20bd"
+
+		/>
+
+	<TextView
+		android:id="@+id/countLabel"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+
+
+		android:drawableLeft="@drawable/ic_amount"
+		android:drawablePadding="4dp"
+
+		android:gravity="center_vertical"
+		android:maxLines="1"
+
+		android:textSize="12sp"
+		tools:text="48 шт. / 1100 гр. bolshe ne po"
+
+		android:layout_alignParentStart="true"
+		android:layout_alignParentBottom="true"
+		android:layout_toStartOf="@+id/addToTashBtn"/>
+
+	<TextView
+		android:id="@+id/oldPrice"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+
+
+		android:textSize="12sp"
+		tools:text="126 \u20bd"
+
+		android:layout_above="@+id/countLabel"
+		android:layout_alignParentEnd="true"/>
+
+	<TextView
+		android:id="@+id/discount"
+		style="@style/discount"
+		android:layout_width="wrap_content"
+
+		android:layout_marginEnd="@dimen/mainPadding"
+		android:layout_height="wrap_content"
+		tools:text="-50%"
+		android:layout_centerVertical="true"
+		android:layout_toStartOf="@+id/oldPrice"/>
+</RelativeLayout>

@@ -2,15 +2,13 @@ package com.tytosoft.delivery
 
 import android.content.Intent
 import android.net.Uri
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.{MenuItem, View}
 import android.view.View.OnClickListener
+import android.view.{MenuItem, View}
 import com.kos.delivery.net.DataStore
 import com.tytosoft.badgesapp.adapters.holders.OrderProductHolder
 import com.tytosoft.badgesapp.model.{OrderModel, ProductModel}
 import com.tytosoft.delivery.common.utils.BusActivity
-import com.tytosoft.delivery.model.AdsModel
 
 class DetailActivity extends BusActivity with OnClickListener {
 	import DataStore._
@@ -42,6 +40,10 @@ class DetailActivity extends BusActivity with OnClickListener {
 		holder.bind(0,order)
 
 		find[View](R.id.callBtn).setOnClickListener(this)
+
+//		val dp=getResources.getDisplayMetrics.density
+//
+//		find[LinearLayout](R.id.productLList).setDividerDrawable(new DashDrawable(colorResource(R.color.dashDivider),dp))
 	}
 
 	override def onClick(view: View): Unit = {
