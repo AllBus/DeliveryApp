@@ -48,4 +48,5 @@ E-Mail: info@tytosoft.ru
 	<string name="fullOrderCost">Общая стоимость заказа</string>
 	<string name="deliveryCost">Стоимость доставки</string>
 	<string name="korzina">Корзина</string>
+	<string name="addToTash">Добавить в корзину</string>
 </resources>

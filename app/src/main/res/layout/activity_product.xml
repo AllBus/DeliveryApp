@@ -24,6 +24,7 @@
 			app:contentScrim="?attr/colorPrimary"
 			app:expandedTitleTextAppearance="@style/TextAppearance.Design.CollapsingToolbar.Expanded.Shadow"
 
+
 			app:layout_scrollFlags="scroll|exitUntilCollapsed">
 			<ImageView
 				android:id="@+id/image"
@@ -74,6 +75,8 @@
 		app:layout_anchor="@id/app_bar"
 		android:tint="@color/white"
 		app:layout_anchorGravity="bottom|end"/>
+
+
 
 	<include layout="@layout/content_product"/>
 

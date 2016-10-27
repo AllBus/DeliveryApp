@@ -20,7 +20,7 @@ import com.tytosoft.delivery.views.FABwithText
 /**
   * Created by Kos on 17.07.2016.
   */
-class NavActivity extends BusActivity{
+class NavActivity extends BusActivity {
 	lazy val fab=find[FABwithText](R.id.fab)
 	lazy val zakaz_bar_width=dimension(R.dimen.zakaz_board_width)
 
@@ -171,4 +171,6 @@ class NavActivity extends BusActivity{
 			case _ ⇒
 		}
 	}
+
+
 }

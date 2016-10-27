@@ -21,6 +21,7 @@ class FullProductHolder(itemView: View, clickAddToTash: OnClickListener, itemCli
 	val discount = find[TextView](R.id.discount)
 	val addToTash = find[TextView](R.id.addToTashBtn)
 	val oldPrice = find[TextView](R.id.oldPrice)
+	val priceLabel = find[TextView](R.id.priceLabel)
 	if (addToTash!=null)
 		addToTash.setOnClickListener(clickAddToTash)
 
@@ -50,7 +51,12 @@ class FullProductHolder(itemView: View, clickAddToTash: OnClickListener, itemCli
 					if (addToTash != null) {
 						addToTash.setTag(element)
 						U.visible(addToTash,element.isActive)
-						U.text(addToTash, preferences.price(element.getPricesCurrent))
+						if (priceLabel==null)
+							U.text(addToTash, preferences.price(element.getPricesCurrent))
+						else{
+							U.text(priceLabel, preferences.price(element.getPricesCurrent))
+
+						}
 					}
 
 					if (element.hasOldPrice) {
