@@ -57,9 +57,9 @@ class ActivityCreateZakaz extends BusActivity
 		mViewPager.addOnPageChangeListener(this)
 		indicator.setNumberOfItems(mSectionsPagerAdapter.getCount)
 
-		indicator.check(0,lastProfile.checkPhone)
-		indicator.check(1,lastProfile.checkName)
-		indicator.check(2,lastProfile.checkAddress)
+//		indicator.check(0,lastProfile.checkPhone)
+//		indicator.check(1,lastProfile.checkName)
+//		indicator.check(2,lastProfile.checkAddress)
 
 		indicator.setDotClickListener(this)
 
@@ -166,7 +166,7 @@ class ActivityCreateZakaz extends BusActivity
 						edit.addTextChangedListener(new SimpleTextWatcher {
 							override def afterTextChanged(editable: Editable): Unit = {
 								lastProfile.phone=editable.toString
-								indicator.check(0,lastProfile.checkPhone)
+							//	indicator.check(0,lastProfile.checkPhone)
 							}
 						})
 						edit.setText(lastProfile.phone)
@@ -179,7 +179,7 @@ class ActivityCreateZakaz extends BusActivity
 						edit.addTextChangedListener(new SimpleTextWatcher {
 							override def afterTextChanged(editable: Editable): Unit = {
 								lastProfile.name=editable.toString
-								indicator.check(1,lastProfile.checkName)
+								//indicator.check(1,lastProfile.checkName)
 							}
 						})
 						edit.setText(lastProfile.name)
@@ -192,7 +192,7 @@ class ActivityCreateZakaz extends BusActivity
 						edit.addTextChangedListener(new SimpleTextWatcher {
 							override def afterTextChanged(editable: Editable): Unit = {
 								lastProfile.address=editable.toString
-								indicator.check(2,lastProfile.checkAddress)
+							//	indicator.check(2,lastProfile.checkAddress)
 								checkCompleteBtn()
 							}
 						})
@@ -240,6 +240,11 @@ class ActivityCreateZakaz extends BusActivity
 
 	def onPageSelected(position: Int) {
 		indicator.setSelectedItem(position, true)
+		for (i ← 0 until 2){
+			indicator.check(i,i<position)
+		}
+
+
 		val v: View = mViewPager.findViewById(position + SECTION_ID)
 		if (v != null) {
 			v.findViewById(R.id.edit).requestFocus
