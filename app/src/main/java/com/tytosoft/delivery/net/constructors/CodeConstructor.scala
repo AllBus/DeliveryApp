@@ -12,7 +12,7 @@ class CodeConstructor(action:String) extends IJSONConstructor{
 
 
 		if (jsonObject!=null) {
-		//	LogD("Code "+jsonObject.getCode)
+	//		LogD("Code "+jsonObject.getCode)
 
 			allInfo.newElement(new CodeData(action, jsonObject.getCode))
 		}else{

@@ -5,7 +5,8 @@ package com.tytosoft.badgesapp.net
   */
 object Program {
 
-	val API="http://api.devparking.club/v1/"
+	//val API="http://api.devparking.club/v1/"
+	val API = "https://takocrm.ru/api/takodemo/"
 
 	val _ACTION_EMPTY=""
 
@@ -30,7 +31,7 @@ object Program {
 	val LIST_PRODUCT= "product"
 	val LIST_ADV ="ads"
 
-	val CODE_ZAKAZ_COMPLETE=500
+	val CODE_ZAKAZ_COMPLETE=200
 
 	def isZakazComplete(code:Int):Boolean= code == CODE_ZAKAZ_COMPLETE
 }
