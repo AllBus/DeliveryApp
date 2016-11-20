@@ -8,6 +8,7 @@ import com.kos.fastuimodule.good.common.system.collection.ListLoadingData
 import com.tytosoft.delivery.data.AppPrefererences
 import com.tytosoft.delivery.model._
 import com.tytosoft.delivery.model.data.{Korzina, UserProfile}
+import com.tytosoft.delivery.model.transport.CodeData
 import org.json.JSONObject
 
 
@@ -77,6 +78,7 @@ object DataStore {
 		new OrderModel(_),
 		BusConstants.order
 	)
+	//todo: need clear order before download
 
 	@inline private[this] def standardList[T<:IEntity](api:String,
 													   loaderItem: ⇒ T,
@@ -162,21 +164,27 @@ object DataStore {
 
 				lastProfile.progressState=data.code
 				if (Program.isZakazComplete(data.code)){
-					addZakaz(lastKorzina)
+					ProgramRun.order()
+				//	addZakaz(lastKorzina)
 					lastKorzina=new Korzina()
 					BusProvider.post(BusConstants.clearKorzina)
 				}
+				BusProvider.post(BusConstants.updateZakaz)
+
+			case Program.API_ORDER ⇒
 				BusProvider.post(BusConstants.updateZakaz)
 
 			case _ ⇒
 		}
 	}
 
-	def addZakaz(korzina: Korzina): Unit ={
-		val order=new OrderModel(id=System.currentTimeMillis() ,korzina,preferences)
-		CommonEventSaver.saveSon(info,info.tableName(Program.API_ORDER),Seq(order.getId → order.save()))
-		orders.put(Seq(order), postUpdate = true)
-	}
+
+
+//	def addZakaz(korzina: Korzina): Unit ={
+//		val order=new OrderModel(id=System.currentTimeMillis() ,korzina,preferences)
+//		CommonEventSaver.saveSon(info,info.tableName(Program.API_ORDER),Seq(order.getId → order.save()))
+//		orders.put(Seq(order), postUpdate = true)
+//	}
 
 	def loadZakazHistory(): Unit ={
 		if (orders.isEmpty){

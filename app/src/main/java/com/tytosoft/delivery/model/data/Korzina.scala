@@ -17,8 +17,6 @@ import scalaxy.loops._
   */
 class Korzina() extends IChangedListModel[ID, OrderProductModel, util.ArrayList[OrderProductModel]] {
 
-
-
 	var summa = 0
 
 	var list = new util.ArrayList[OrderProductModel]()

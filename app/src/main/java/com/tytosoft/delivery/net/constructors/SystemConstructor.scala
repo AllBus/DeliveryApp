@@ -10,9 +10,9 @@ import com.tytosoft.delivery.model.SystemModel
 class SystemConstructor extends IJSONConstructor{
 	override def construct(allInfo: AllInfo, jsonObject: TJSONObject, needSave: Boolean): Unit = {
 
-		LogD("request system")
+		//LogD("request system")
 		if (jsonObject!=null) {
-			LogD(""+jsonObject.getCode)
+		//	LogD(""+jsonObject.getCode)
 
 
 			val arr=jsonObject.getJsonArray

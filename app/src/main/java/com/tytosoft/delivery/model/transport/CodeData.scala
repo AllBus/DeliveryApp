@@ -1,4 +1,4 @@
-package com.tytosoft.delivery.model
+package com.tytosoft.delivery.model.transport
 
 import com.kos.fastuimodule.common.net.IData
 import com.tytosoft.delivery.net.DataStore

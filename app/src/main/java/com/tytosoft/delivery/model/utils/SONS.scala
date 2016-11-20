@@ -155,7 +155,7 @@ object SONS {
 			orElse: ⇒ OrderStatusModel): OrderStatusModel = {
 		val jobj=jsonObject.optJSONObject(name)
 		if (jobj!=null){
-			run(jsonObject)
+			run(jobj)
 		}else{
 			orElse
 		}

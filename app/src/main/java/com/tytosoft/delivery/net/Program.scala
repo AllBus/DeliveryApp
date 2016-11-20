@@ -31,7 +31,7 @@ object Program {
 	val LIST_PRODUCT= "product"
 	val LIST_ADV ="ads"
 
-	val CODE_ZAKAZ_COMPLETE=200
+	val CODE_COMPLETE=200
 
-	def isZakazComplete(code:Int):Boolean= code == CODE_ZAKAZ_COMPLETE
+	def isZakazComplete(code:Int):Boolean= code == CODE_COMPLETE
 }

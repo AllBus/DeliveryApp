@@ -44,7 +44,10 @@ class OrderProductHolder(topView: View,val itemClick:OnClickListener) extends It
 		super.bind(position,elem)
 
 
-		statusText.setText(elem.getStatus.getName)
+		if (statusText!=null) {
+			statusText.setText(elem.getStatus.getName)
+			statusText.setTextColor(elem.getStatus.getColor)
+		}
 		if (dostavkaPrice!=null) {
 			dostavkaPrice.setText(DataStore.preferences.price(elem.deliveryCost))
 		}
@@ -53,6 +56,7 @@ class OrderProductHolder(topView: View,val itemClick:OnClickListener) extends It
 		}
 		if (statusDate!=null){
 			statusDate.setText(elem.getDate)
+
 		}
 
 		var b=true

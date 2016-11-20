@@ -7,7 +7,7 @@ import com.tytosoft.badgesapp.net.constructors.SystemConstructor
 import com.tytosoft.badgesapp.net.posts.{AddOrderPost, OrderPost, Poster}
 import com.tytosoft.delivery.model.data.{Korzina, UserProfile}
 import com.tytosoft.delivery.net.DataStore._
-import com.tytosoft.delivery.net.constructors.{CodeConstructor, OrderConstructor}
+import com.tytosoft.delivery.net.constructors.{CodeConstructor}
 
 
 /**
@@ -20,12 +20,9 @@ object ProgramRun {
 		JSONRequest.asynh(info, Program.API + Program.API_ORDER_ADD, poster)
 	}
 
-	def order(profile: UserProfile, korzina: Korzina) = {
-		val poster = new OrderPost(info, new OrderConstructor(Program.API_ORDER))
-
-		JSONRequest.asynh(info, Program.API + Program.API_ORDER, poster)
+	def order() = {
+		GoodApi.load(Program.API_ORDER, Program._ACTION_EMPTY,onlyServer=true)(orders, EMPTY_IDS)
 	}
-
 
 
 	val tpe = Executors.newSingleThreadExecutor()

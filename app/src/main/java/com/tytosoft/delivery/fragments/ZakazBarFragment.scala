@@ -6,7 +6,7 @@ import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener
 import android.support.v7.widget.{LinearLayoutManager, RecyclerView}
 import android.view.View.OnClickListener
 import android.view.{LayoutInflater, View, ViewGroup}
-import com.kos.fastuimodule.good.common.bus.EndLoadUpdate
+import com.kos.fastuimodule.good.common.bus.{EndLoadUpdate, StartLoadUpdate}
 import com.squareup.otto.Subscribe
 import com.tytosoft.delivery.adapters.HistoryOrderAdapter
 import com.tytosoft.delivery.model.controler.OrderModelController
@@ -112,7 +112,14 @@ class ZakazBarFragment extends BusFragment with OnRefreshListener {
 	def updateOrder(updater:OrderItemUpdate): Unit ={
 		//todo:
 	}
+	@Subscribe
+	def updateStartLoad(updater:StartLoadUpdate): Unit ={
+		if (updater.infoType==Program.API_ORDER){
+			swipe.setRefreshing(true)
+		}
 
+
+	}
 	@Subscribe
 	def updateProduct(updater:ProductItemUpdate): Unit ={
 		if (controller.hasUpdates(updater.id))
@@ -128,7 +135,7 @@ class ZakazBarFragment extends BusFragment with OnRefreshListener {
 	}
 
 	override def onRefresh(): Unit = {
-		ProgramRun.order(DataStore.lastProfile,DataStore.lastKorzina)
-		reload()
+		ProgramRun.order()
+		//reload()
 	}
 }

@@ -6,6 +6,7 @@ import com.kos.fastuimodule.good.common.core.IContexter
 import com.kos.fastuimodule.good.common.model.IEntity
 import com.kos.fastuimodule.good.common.system.collection.ListLoadingData
 import com.kos.fastuimodule.good.common.system.{EConstructType, GoodPostArguments}
+import com.tytosoft.delivery.common.utils.LogD
 import com.tytosoft.delivery.net.EventSaver
 import org.json.{JSONArray, JSONObject}
 
@@ -28,9 +29,10 @@ class EntityConstructor[T <: IEntity](val context:IContexter,
 			return
 
 
-	//	LogD("EntityConstructor "+arguments.ids+" "+arguments.infoType)
-	//	LogD("OBJ "+tjsonObject.getCode)
-	//	val obj=tjsonObject.getJsonObject
+		//LogD("EntityConstructor "+arguments.ids+" "+arguments.infoType)
+//		LogD("Type "+arguments.constructType)
+//		LogD("OBJ "+tjsonObject.getCode)
+//		val obj=tjsonObject.getJsonObject
 //		if (obj!=null){
 //			LogD(obj.toString(2))
 //		}
