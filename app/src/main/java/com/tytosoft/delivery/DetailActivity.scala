@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.view.View.OnClickListener
 import android.view.{MenuItem, View}
 import com.kos.delivery.net.DataStore
-import com.tytosoft.badgesapp.adapters.holders.OrderProductHolder
 import com.tytosoft.badgesapp.model.{OrderModel, ProductModel}
+import com.tytosoft.delivery.adapters.holders.OrderProductHolder
 import com.tytosoft.delivery.common.utils.BusActivity
 
 class DetailActivity extends BusActivity with OnClickListener {

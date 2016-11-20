@@ -1,11 +1,9 @@
-package com.kos.delivery.adapters.holders
-
+package com.tytosoft.delivery.adapters.holders
 
 import android.view.View
 import android.view.View.OnClickListener
 import com.kos.fastuimodule.good.common.model.IEntity
 import com.tytosoft.delivery.R
-import com.tytosoft.delivery.adapters.holders.SimpleHolder
 import com.tytosoft.delivery.holders.AdsHolder
 import com.tytosoft.delivery.model.ListModel
 

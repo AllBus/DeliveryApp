@@ -1,4 +1,4 @@
-package com.tytosoft.badgesapp.adapters.holders
+package com.tytosoft.delivery.adapters.holders
 
 import android.view.View
 import android.view.View.OnClickListener

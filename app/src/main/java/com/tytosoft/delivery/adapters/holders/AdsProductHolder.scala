@@ -1,4 +1,4 @@
-package com.tytosoft.badgesapp.adapters.holders
+package com.tytosoft.delivery.adapters.holders
 
 import android.graphics.Paint
 import android.view.View
@@ -9,7 +9,6 @@ import com.kos.delivery.net.DataStore._
 import com.kos.fastuimodule.common.ui.{U, US}
 import com.kos.fastuimodule.good.common.model.IEntity
 import com.tytosoft.delivery.R
-import com.tytosoft.delivery.adapters.holders.SimpleHolder
 import com.tytosoft.delivery.model.AdsModel
 
 /**

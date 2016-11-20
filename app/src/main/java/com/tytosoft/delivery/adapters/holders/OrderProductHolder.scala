@@ -1,8 +1,8 @@
-package com.tytosoft.badgesapp.adapters.holders
+package com.tytosoft.delivery.adapters.holders
 
 import android.view.View.OnClickListener
 import android.view.{LayoutInflater, View, ViewGroup}
-import android.widget.{Button, TextView}
+import android.widget.TextView
 import com.kos.delivery.common.holders.ListHolder
 import com.kos.delivery.net.DataStore
 import com.kos.fastuimodule.common.ui.U

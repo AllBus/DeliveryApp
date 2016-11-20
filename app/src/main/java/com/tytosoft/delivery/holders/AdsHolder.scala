@@ -8,10 +8,10 @@ import android.view.View.OnClickListener
 import android.view.{LayoutInflater, View}
 import com.kos.delivery.net.DataStore
 import com.kos.fastuimodule.good.common._
-import com.tytosoft.badgesapp.adapters.holders.AdsProductHolder
 import com.tytosoft.badgesapp.views.dots.{DotIndicator, OnDotClickListener}
 import com.tytosoft.delivery.R
 import com.tytosoft.delivery.adapters.SamplePagerAdapter
+import com.tytosoft.delivery.adapters.holders.AdsProductHolder
 import com.tytosoft.delivery.model.ListModel
 
 import scalaxy.beans._

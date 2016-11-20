@@ -1,4 +1,4 @@
-package com.tytosoft.badgesapp.adapters
+package com.tytosoft.delivery.adapters
 
 import android.content.Context
 import android.support.annotation.LayoutRes

@@ -10,9 +10,9 @@ import com.kos.delivery.common.utils.LogD
 import com.kos.delivery.net.{DataStore, OrderItemUpdate}
 import com.kos.fastuimodule.good.common.bus.EndLoadUpdate
 import com.squareup.otto.Subscribe
-import com.tytosoft.badgesapp.adapters.HistoryOrderAdapter
 import com.tytosoft.badgesapp.model.{OrderModel, ProductModel}
 import com.tytosoft.badgesapp.net.{ProductItemUpdate, Program, ProgramRun}
+import com.tytosoft.delivery.adapters.HistoryOrderAdapter
 import com.tytosoft.delivery.model.controler.OrderModelController
 import com.tytosoft.delivery.net.GoodApi
 import com.tytosoft.delivery.{DetailActivity, KorzinaActivity, ProductActivity, R}

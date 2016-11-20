@@ -7,10 +7,10 @@ import com.kos.delivery.net.DataStore._
 import com.kos.fastuimodule.common.net.JSONRequest
 import com.tytosoft.badgesapp.model.data.UserProfile
 import com.tytosoft.badgesapp.net.constructors.SystemConstructor
-import com.tytosoft.badgesapp.net.posts.{Poster, AddOrderPost}
+import com.tytosoft.badgesapp.net.posts.{AddOrderPost, OrderPost, Poster}
 import com.tytosoft.delivery.model.data.Korzina
 import com.tytosoft.delivery.net.GoodApi
-import com.tytosoft.delivery.net.constructors.CodeConstructor
+import com.tytosoft.delivery.net.constructors.{CodeConstructor, OrderConstructor}
 
 
 /**
@@ -24,7 +24,7 @@ object ProgramRun {
 	}
 
 	def order(profile: UserProfile, korzina: Korzina) = {
-		val poster = new AddOrderPost(info, new CodeConstructor(Program.API_ORDER),profile,korzina)
+		val poster = new OrderPost(info, new OrderConstructor(Program.API_ORDER))
 
 		JSONRequest.asynh(info, Program.API + Program.API_ORDER, poster)
 	}
