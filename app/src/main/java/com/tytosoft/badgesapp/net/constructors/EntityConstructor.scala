@@ -79,8 +79,6 @@ class EntityConstructor[T <: IEntity](val context:IContexter,
 				}
 			}
 
-
-
 			if (items.nonEmpty) {
 				if (needSave) {
 					saver(builder)

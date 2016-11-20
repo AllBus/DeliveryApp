@@ -18,11 +18,18 @@ import com.tytosoft.delivery.net.constructors.CodeConstructor
   */
 object ProgramRun {
 	def addOrder(profile: UserProfile, korzina: Korzina) = {
-
 		val poster = new AddOrderPost(info, new CodeConstructor(Program.API_ORDER_ADD),profile,korzina)
 
 		JSONRequest.asynh(info, Program.API + Program.API_ORDER_ADD, poster)
 	}
+
+	def order(profile: UserProfile, korzina: Korzina) = {
+		val poster = new AddOrderPost(info, new CodeConstructor(Program.API_ORDER),profile,korzina)
+
+		JSONRequest.asynh(info, Program.API + Program.API_ORDER, poster)
+	}
+
+
 
 	val tpe = Executors.newSingleThreadExecutor()
 	val EMPTY_IDS = Set(-1L)

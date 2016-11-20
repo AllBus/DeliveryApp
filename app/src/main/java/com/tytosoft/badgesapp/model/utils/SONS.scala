@@ -60,7 +60,11 @@ object SONS {
 	//============================================
 
 	def get(sharedPreferences: SharedPreferences, name: String, typ: String): String = {
-		sharedPreferences.getString(name,typ)
+		try {
+			sharedPreferences.getString(name, typ)
+		}catch {
+			case _: Throwable ⇒ ""
+		}
 	}
 
 

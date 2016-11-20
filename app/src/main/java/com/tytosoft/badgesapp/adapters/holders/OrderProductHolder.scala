@@ -68,6 +68,7 @@ class OrderProductHolder(topView: View,val itemClick:OnClickListener) extends It
 			UU.visible(view.findViewById(R.id.price),view.findViewById(R.id.active),product.isActive)
 			view.setOnClickListener(itemClick)
 			view.setTag(product)
+			U.gone(view.findViewById(R.id.separator),pos<elem.size-1)
 		})
 
 		if (itemListLabel!=null){

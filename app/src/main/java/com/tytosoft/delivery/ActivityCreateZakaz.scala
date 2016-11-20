@@ -96,8 +96,6 @@ class ActivityCreateZakaz extends BusActivity
 			U.text(resultTitle,R.string.createZakazErrorName)
 			U.text(resultMessage,R.string.createZakazErrorText)
 		}
-
-
 	}
 
 	override def onOptionsItemSelected(item: MenuItem): Boolean = {

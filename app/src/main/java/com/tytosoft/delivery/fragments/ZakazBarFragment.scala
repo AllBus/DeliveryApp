@@ -12,8 +12,9 @@ import com.kos.fastuimodule.good.common.bus.EndLoadUpdate
 import com.squareup.otto.Subscribe
 import com.tytosoft.badgesapp.adapters.HistoryOrderAdapter
 import com.tytosoft.badgesapp.model.{OrderModel, ProductModel}
-import com.tytosoft.badgesapp.net.{ProductItemUpdate, Program}
+import com.tytosoft.badgesapp.net.{ProductItemUpdate, Program, ProgramRun}
 import com.tytosoft.delivery.model.controler.OrderModelController
+import com.tytosoft.delivery.net.GoodApi
 import com.tytosoft.delivery.{DetailActivity, KorzinaActivity, ProductActivity, R}
 
 /**
@@ -100,6 +101,7 @@ class ZakazBarFragment extends BusFragment with OnRefreshListener {
 
 
 	def reload(): Unit = {
+
 		adapter.changeList(orders.allItems())
 		swipe.setRefreshing(false)
 	}
@@ -129,6 +131,7 @@ class ZakazBarFragment extends BusFragment with OnRefreshListener {
 	}
 
 	override def onRefresh(): Unit = {
+		ProgramRun.order(DataStore.lastProfile,DataStore.lastKorzina)
 		reload()
 	}
 }
