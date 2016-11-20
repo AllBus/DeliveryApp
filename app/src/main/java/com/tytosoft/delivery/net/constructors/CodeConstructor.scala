@@ -1,7 +1,7 @@
 package com.tytosoft.delivery.net.constructors
 
-import com.kos.delivery.common.utils.LogD
 import com.kos.fastuimodule.common.net.{AllInfo, IJSONConstructor, TJSONObject}
+import com.tytosoft.delivery.common.utils.LogD
 import com.tytosoft.delivery.model.CodeData
 
 /**

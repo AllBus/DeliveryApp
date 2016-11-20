@@ -20,7 +20,7 @@
 		app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 
-	<com.tytosoft.badgesapp.views.dots.DotIndicator
+	<com.tytosoft.delivery.views.dots.DotIndicator
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:id="@+id/adsIndicator"

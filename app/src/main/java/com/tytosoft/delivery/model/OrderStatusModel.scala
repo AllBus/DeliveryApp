@@ -1,8 +1,7 @@
 package com.tytosoft.delivery.model
 
 import com.kos.fastuimodule.common.share.SON
-import com.tytosoft.badgesapp.model.BaseModel
-import com.tytosoft.badgesapp.model.utils.ISave
+import com.tytosoft.delivery.model.utils.ISave
 import org.json.JSONObject
 
 /**

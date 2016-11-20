@@ -3,15 +3,14 @@ package com.tytosoft.delivery.adapters.holders
 import android.view.View.OnClickListener
 import android.view.{LayoutInflater, View, ViewGroup}
 import android.widget.TextView
-import com.kos.delivery.common.holders.ListHolder
-import com.kos.delivery.net.DataStore
 import com.kos.fastuimodule.common.ui.U
-import com.tytosoft.badgesapp.common.adapters.universal.ItemHolder
-import com.tytosoft.badgesapp.graphic.shapes.TicketDrawable
-import com.tytosoft.badgesapp.model.OrderModel
+import com.tytosoft.delivery.adapters.universal.ItemHolder
 import com.tytosoft.delivery.R
 import com.tytosoft.delivery.common.helpers.ResHelper
 import com.tytosoft.delivery.common.utils.UU
+import com.tytosoft.delivery.graphic.shapes.TicketDrawable
+import com.tytosoft.delivery.model.OrderModel
+import com.tytosoft.delivery.net.DataStore
 
 /**
   * Created by Kos on 06.07.2016.

@@ -7,15 +7,13 @@ import android.support.v7.widget.{LinearLayoutManager, RecyclerView}
 import android.view.View.OnClickListener
 import android.view.{Menu, MenuItem, View}
 import android.widget.ProgressBar
-import com.kos.delivery.net._
 import com.squareup.otto.Subscribe
-import com.tytosoft.badgesapp.model.ProductModel
 import com.tytosoft.badgesapp.net.updaters.UpdateSystem
-import com.tytosoft.badgesapp.net.{ProductItemUpdate, Program}
 import com.tytosoft.delivery.adapters.SimpleAdapter
 import com.tytosoft.delivery.adapters.holders.FullProductHolder
 import com.tytosoft.delivery.common.helpers.ResHelper
-import com.tytosoft.delivery.net.ListItemUpdate
+import com.tytosoft.delivery.model.ProductModel
+import com.tytosoft.delivery.net._
 
 class CatalogActivity extends NavActivity with OnClickListener{
 

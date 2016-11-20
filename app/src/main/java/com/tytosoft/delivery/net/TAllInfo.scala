@@ -5,12 +5,11 @@ import java.util.UUID
 import android.content.{Context, SharedPreferences}
 import android.database.sqlite.SQLiteDatabase
 import android.util.Log
-import com.kos.delivery.common.utils.LogD
 import com.kos.fastuimodule.common.net.{ErrorElement, TGetPostListNameValuePair, TPostListNameValuePair}
 import com.kos.fastuimodule.common.ui.Utils
 import com.kos.fastuimodule.good.common.core.IContexter
-import com.tytosoft.badgesapp.model.utils.SONS
-import com.tytosoft.badgesapp.net.Program
+import com.tytosoft.delivery.common.utils.LogD
+import com.tytosoft.delivery.model.utils.SONS
 
 import scala.util.Try
 

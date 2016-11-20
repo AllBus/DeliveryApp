@@ -1,7 +1,7 @@
 package com.tytosoft.delivery.model.controler
 
 import com.kos.fastuimodule.good.common.ID
-import com.tytosoft.badgesapp.common.adapters.universal.IListModel
+import com.tytosoft.delivery.adapters.universal.IListModel
 import com.tytosoft.delivery.model.ListModel
 
 /**

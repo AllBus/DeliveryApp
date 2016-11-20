@@ -4,17 +4,17 @@ import android.graphics.Paint
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.{Button, TextView}
-import com.kos.delivery.net.DataStore
-import com.kos.delivery.net.DataStore._
+import com.tytosoft.delivery.net.DataStore._
 import com.kos.fastuimodule.common.ui.{U, US}
 import com.kos.fastuimodule.good.common.model.IEntity
 import com.tytosoft.delivery.R
 import com.tytosoft.delivery.model.AdsModel
+import com.tytosoft.delivery.net.DataStore
 
 /**
   * Created by Kos on 06.07.2016.
   */
-class AdsProductHolder(itemView: View, clickAddToTash: OnClickListener, itemClick: OnClickListener) extends SimpleHolder(itemView, itemClick) {
+class AdsProductHolder(itemTop: View, clickAddToTash: OnClickListener, itemClick: OnClickListener) extends SimpleHolder(itemTop, itemClick) {
 
 	val discount = find[TextView](R.id.discount)
 	val addToTash = find[Button](R.id.addToTashBtn)

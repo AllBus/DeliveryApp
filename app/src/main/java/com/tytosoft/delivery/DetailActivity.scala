@@ -5,10 +5,10 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View.OnClickListener
 import android.view.{MenuItem, View}
-import com.kos.delivery.net.DataStore
-import com.tytosoft.badgesapp.model.{OrderModel, ProductModel}
 import com.tytosoft.delivery.adapters.holders.OrderProductHolder
 import com.tytosoft.delivery.common.utils.BusActivity
+import com.tytosoft.delivery.model.{OrderModel, ProductModel}
+import com.tytosoft.delivery.net.DataStore
 
 class DetailActivity extends BusActivity with OnClickListener {
 	import DataStore._

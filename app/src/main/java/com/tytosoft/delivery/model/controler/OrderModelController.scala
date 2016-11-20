@@ -1,9 +1,8 @@
 package com.tytosoft.delivery.model.controler
 
-import com.kos.delivery.net.DataStore
 import com.kos.fastuimodule.good.common._
-import com.tytosoft.badgesapp.common.adapters.universal.IListModel
-import com.tytosoft.badgesapp.model.{ProductModel, OrderModel}
+import com.tytosoft.delivery.adapters.universal.IListModel
+import com.tytosoft.delivery.model.OrderModel
 
 /**
   * Created by Kos on 21.07.2016.

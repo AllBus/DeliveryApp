@@ -3,7 +3,7 @@ package com.tytosoft.delivery
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
-import com.tytosoft.badgesapp.common.utils.SActivity
+import com.tytosoft.delivery.common.utils.SActivity
 
 class AboutActivity extends AppCompatActivity with SActivity {
 

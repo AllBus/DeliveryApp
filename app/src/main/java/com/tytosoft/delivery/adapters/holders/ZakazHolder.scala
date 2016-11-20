@@ -5,10 +5,10 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.{Button, TextView}
 import com.kos.fastuimodule.good.common.model.IEntity
-import com.tytosoft.badgesapp.graphic.shapes.TicketDrawable
-import com.tytosoft.badgesapp.model.OrderModel
 import com.tytosoft.delivery.R
 import com.tytosoft.delivery.common.helpers.ResHelper
+import com.tytosoft.delivery.graphic.shapes.TicketDrawable
+import com.tytosoft.delivery.model.OrderModel
 
 /**
   * Created by Kos on 06.07.2016.

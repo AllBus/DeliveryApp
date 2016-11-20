@@ -14,14 +14,12 @@ import android.view.View.OnClickListener
 import android.view._
 import android.view.inputmethod.EditorInfo
 import android.widget._
-import com.kos.delivery.net.DataStore
 import com.kos.fastuimodule.common.ui.U
 import com.squareup.otto.Subscribe
-import com.tytosoft.badgesapp.common.listeners.SimpleTextWatcher
-import com.tytosoft.badgesapp.common.utils.SActivity
-import com.tytosoft.badgesapp.net.{Program, ProgramRun, UpdateZakaz}
-import com.tytosoft.badgesapp.views.dots.{OnDotClickListener, ShaperIndicator}
-import com.tytosoft.delivery.common.utils.{BusActivity, UU}
+import com.tytosoft.delivery.common.listeners.SimpleTextWatcher
+import com.tytosoft.delivery.common.utils.{BusActivity, SActivity, UU}
+import com.tytosoft.delivery.net.{DataStore, Program, ProgramRun, UpdateZakaz}
+import com.tytosoft.delivery.views.dots.{OnDotClickListener, ShaperIndicator}
 
 
 object ActivityCreateZakaz {

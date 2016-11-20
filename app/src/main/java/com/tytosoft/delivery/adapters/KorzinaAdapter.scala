@@ -3,7 +3,7 @@ package com.tytosoft.delivery.adapters
 import android.content.Context
 import android.support.annotation.LayoutRes
 import android.view.View.OnClickListener
-import com.tytosoft.badgesapp.common.adapters.universal.ChangedListAdapter
+import com.tytosoft.delivery.adapters.universal.ChangedListAdapter
 import com.tytosoft.delivery.adapters.holders.KorzinaProductHolder
 import com.tytosoft.delivery.model.data.Korzina
 

@@ -1,22 +1,18 @@
 package com.tytosoft.delivery
 
-import android.app.WallpaperManager
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.view.View.OnClickListener
 import android.view.{Menu, View}
-import android.widget.ImageView
-import com.kos.delivery.graphic.shapes.DialDrawable
-import com.kos.delivery.net.DataStore._
 import com.kos.fastuimodule.good.common._
-import com.tytosoft.badgesapp.model.ProductModel
 import com.tytosoft.delivery.common.helpers.ResHelper
 import com.tytosoft.delivery.common.utils.BusActivity
-import com.tytosoft.delivery.model.{AdsModel, ListModel}
+import com.tytosoft.delivery.graphic.shapes.DialDrawable
+import com.tytosoft.delivery.model.{AdsModel, ListModel, ProductModel}
 import com.tytosoft.delivery.views.FABwithText
-
+import com.tytosoft.delivery.net.DataStore._
 /**
   * Created by Kos on 17.07.2016.
   */

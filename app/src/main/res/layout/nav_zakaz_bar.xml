@@ -9,7 +9,7 @@
 
 	>
 
-	<com.tytosoft.badgesapp.views.VSwipeRefreshLayout
+	<com.tytosoft.delivery.views.VSwipeRefreshLayout
 
 		android:layout_width="match_parent"
 		android:id="@+id/swipe"
@@ -26,5 +26,5 @@
 
 			/>
 
-	</com.tytosoft.badgesapp.views.VSwipeRefreshLayout>
+	</com.tytosoft.delivery.views.VSwipeRefreshLayout>
 </LinearLayout>

@@ -2,9 +2,8 @@ package com.tytosoft.delivery.model
 
 import com.kos.fastuimodule.common.share.SON
 import com.kos.fastuimodule.good.common.ID
-import com.tytosoft.badgesapp.model.BaseModel
-import com.tytosoft.badgesapp.model.utils.SONS
-import com.tytosoft.badgesapp.net.Program
+import com.tytosoft.delivery.model.utils.SONS
+import com.tytosoft.delivery.net.Program
 import org.json.JSONObject
 
 /**

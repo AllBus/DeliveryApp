@@ -4,12 +4,11 @@ import android.content.Context
 import android.support.annotation.LayoutRes
 import android.support.v7.widget.RecyclerView
 import android.view.{LayoutInflater, View, ViewGroup}
-
-import com.kos.delivery.net.DataStore
 import com.kos.fastuimodule.good.common._
 import com.kos.fastuimodule.good.common.model.IEntity
 import com.tytosoft.delivery.adapters.holders.SimpleHolder
 import com.tytosoft.delivery.model.ListModel
+import com.tytosoft.delivery.net.DataStore
 
 /**
   * Created by Kos on 06.07.2016.

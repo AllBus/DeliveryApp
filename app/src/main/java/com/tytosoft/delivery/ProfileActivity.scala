@@ -3,9 +3,9 @@ package com.tytosoft.delivery
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.{Menu, MenuItem, View}
-import com.kos.delivery.net.DataStore
 import com.kos.fastuimodule.common.ui.U
-import com.tytosoft.badgesapp.common.utils.SActivity
+import com.tytosoft.delivery.common.utils.SActivity
+import com.tytosoft.delivery.net.DataStore
 
 class ProfileActivity extends AppCompatActivity with SActivity
 //	with OnClickListener

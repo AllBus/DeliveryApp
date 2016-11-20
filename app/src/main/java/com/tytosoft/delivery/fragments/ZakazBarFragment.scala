@@ -6,16 +6,13 @@ import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener
 import android.support.v7.widget.{LinearLayoutManager, RecyclerView}
 import android.view.View.OnClickListener
 import android.view.{LayoutInflater, View, ViewGroup}
-import com.kos.delivery.common.utils.LogD
-import com.kos.delivery.net.{DataStore, OrderItemUpdate}
 import com.kos.fastuimodule.good.common.bus.EndLoadUpdate
 import com.squareup.otto.Subscribe
-import com.tytosoft.badgesapp.model.{OrderModel, ProductModel}
-import com.tytosoft.badgesapp.net.{ProductItemUpdate, Program, ProgramRun}
 import com.tytosoft.delivery.adapters.HistoryOrderAdapter
 import com.tytosoft.delivery.model.controler.OrderModelController
-import com.tytosoft.delivery.net.GoodApi
-import com.tytosoft.delivery.{DetailActivity, KorzinaActivity, ProductActivity, R}
+import com.tytosoft.delivery.model.{OrderModel, ProductModel}
+import com.tytosoft.delivery.net._
+import com.tytosoft.delivery.{DetailActivity, ProductActivity, R}
 
 /**
   * A simple {@link Fragment} subclass.

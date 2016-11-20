@@ -2,7 +2,6 @@ package com.tytosoft.delivery.model
 
 import com.kos.fastuimodule.common.share.SON
 import com.kos.fastuimodule.good.common.ID
-import com.tytosoft.badgesapp.model.ProductModel
 import org.json.JSONObject
 
 /**

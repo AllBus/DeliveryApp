@@ -1,10 +1,10 @@
 package com.tytosoft.delivery.data
 
 import android.content.Context
-import com.tytosoft.badgesapp.model.SystemModel
-import com.tytosoft.badgesapp.model.data.UserProfile
-import com.tytosoft.badgesapp.model.utils.SONS
+import com.tytosoft.delivery.model.data.UserProfile
+import com.tytosoft.delivery.model.utils.SONS
 import com.tytosoft.delivery.R
+import com.tytosoft.delivery.model.SystemModel
 import com.tytosoft.delivery.model.data.Korzina
 
 /**

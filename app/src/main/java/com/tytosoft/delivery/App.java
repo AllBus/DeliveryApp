@@ -2,7 +2,7 @@ package com.tytosoft.delivery;
 
 import android.app.Application;
 
-import com.kos.delivery.net.DataStore;
+import com.tytosoft.delivery.net.DataStore;
 
 /**
  * Created by Kos on 05.07.2016.

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.{LayoutInflater, View, ViewGroup}
 import com.kos.fastuimodule.good.common.ID
-import com.tytosoft.badgesapp.model.utils.SONS
+import com.tytosoft.delivery.model.utils.SONS
 import com.tytosoft.delivery.R
 
 /**

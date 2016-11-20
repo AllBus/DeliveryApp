@@ -2,7 +2,7 @@ package com.tytosoft.delivery.fragments
 
 import android.support.v4.app.Fragment
 import com.kos.fastuimodule.good.common.bus.BusProvider
-import com.tytosoft.badgesapp.common.utils.SFragment
+import com.tytosoft.delivery.common.utils.SFragment
 
 /**
   * Created by Kos on 17.07.2016.

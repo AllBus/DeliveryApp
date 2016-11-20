@@ -19,7 +19,7 @@
 
 			>
 
-			<com.tytosoft.badgesapp.views.TwoLineTextView
+			<com.tytosoft.delivery.views.TwoLineTextView
 				android:id="@+id/dostavkaTime"
 				android:layout_width="0dp"
 				android:layout_height="@dimen/zakazIconHeight"
@@ -31,7 +31,7 @@
 				app:topDrawable="@drawable/acivka_vremy"
 				/>
 
-			<com.tytosoft.badgesapp.views.TwoLineTextView
+			<com.tytosoft.delivery.views.TwoLineTextView
 				android:id="@+id/dostavkaCost"
 				android:layout_width="0dp"
 				android:layout_height="@dimen/zakazIconHeight"
@@ -43,7 +43,7 @@
 				app:topDrawable="@drawable/acivka_zakaz"
 				/>
 
-			<com.tytosoft.badgesapp.views.TwoLineTextView
+			<com.tytosoft.delivery.views.TwoLineTextView
 				android:id="@+id/dostavkaPrice"
 				android:layout_width="0dp"
 				android:layout_height="@dimen/zakazIconHeight"
@@ -54,7 +54,7 @@
 				app:secondLineTextSize="8sp"
 				app:topDrawable="@drawable/acivka_dostavka"
 				/>
-			<com.tytosoft.badgesapp.views.TwoLineTextView
+			<com.tytosoft.delivery.views.TwoLineTextView
 				android:id="@+id/dostavkaFree"
 				android:layout_width="0dp"
 				android:layout_height="@dimen/zakazIconHeight"

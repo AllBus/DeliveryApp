@@ -45,7 +45,7 @@
 		style="@style/CreateZakazNextButton"
 
 		/>
-	<com.tytosoft.badgesapp.views.dots.ShaperIndicator
+	<com.tytosoft.delivery.views.dots.ShaperIndicator
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:id="@+id/indicator"

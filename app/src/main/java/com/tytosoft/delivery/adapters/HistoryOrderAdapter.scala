@@ -3,7 +3,7 @@ package com.tytosoft.delivery.adapters
 import android.content.Context
 import android.support.annotation.LayoutRes
 import android.view.View.OnClickListener
-import com.kos.delivery.common.adapters.universal.ListAdapter
+import com.tytosoft.delivery.adapters.universal.ListAdapter
 import com.tytosoft.delivery.adapters.holders.OrderProductHolder
 import com.tytosoft.delivery.model.controler.OrderModelController
 

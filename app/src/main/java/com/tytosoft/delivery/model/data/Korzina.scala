@@ -2,13 +2,13 @@ package com.tytosoft.delivery.model.data
 
 import java.util
 
-import com.kos.delivery.common.adapters.universal.IChangedListModel
-import com.kos.delivery.model.OrderProductModel
 import com.kos.fastuimodule.core.JTypes._
 import com.kos.fastuimodule.good.common.ID
 import com.kos.fastuimodule.good.common.bus.BusProvider
-import com.tytosoft.badgesapp.net.BusConstants
+import com.tytosoft.delivery.adapters.universal.IChangedListModel
 import com.tytosoft.delivery.data.AppPrefererences
+import com.tytosoft.delivery.model.OrderProductModel
+import com.tytosoft.delivery.net.BusConstants
 
 import scalaxy.loops._
 

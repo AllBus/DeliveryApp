@@ -1,16 +1,14 @@
 package com.tytosoft.delivery
 
 import android.os.Bundle
-import android.support.design.widget.{FloatingActionButton, Snackbar}
 import android.view.View.OnClickListener
-import android.view.{Menu, MenuItem, View}
-import android.widget.{ImageView, TextView}
-import com.kos.delivery.net.DataStore
-import com.kos.delivery.net.DataStore._
+import android.view.{MenuItem, View}
+import android.widget.ImageView
 import com.kos.fastuimodule.common.ui.U
 import com.tytosoft.delivery.adapters.holders.FullProductHolder
-import com.tytosoft.delivery.common.helpers.ResHelper
 import com.tytosoft.delivery.common.utils.BusActivity
+import com.tytosoft.delivery.net.DataStore
+import com.tytosoft.delivery.net.DataStore._
 import com.tytosoft.delivery.views.FABwithText
 
 class ProductActivity extends BusActivity with OnClickListener{

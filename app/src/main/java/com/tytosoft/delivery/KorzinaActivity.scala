@@ -7,16 +7,15 @@ import android.support.v7.widget.{LinearLayoutManager, RecyclerView}
 import android.view.View.OnClickListener
 import android.view.{Menu, MenuItem, View}
 import android.widget.{Button, TextView}
-import com.kos.delivery.model.OrderProductModel
-import com.kos.delivery.net.DataStore
 import com.squareup.otto.Subscribe
-import com.tytosoft.badgesapp.common.dialogs.AlertDialogFragment
-import com.tytosoft.badgesapp.common.dialogs.AlertDialogFragment.IYesNoListener
-import com.tytosoft.badgesapp.net.KorzinaUpdater
-import com.tytosoft.badgesapp.views.TwoLineTextView
 import com.tytosoft.delivery.adapters.KorzinaAdapter
+import com.tytosoft.delivery.common.dialogs.AlertDialogFragment
+import com.tytosoft.delivery.common.dialogs.AlertDialogFragment.IYesNoListener
 import com.tytosoft.delivery.common.helpers.ResHelper
 import com.tytosoft.delivery.common.utils.BusActivity
+import com.tytosoft.delivery.model.OrderProductModel
+import com.tytosoft.delivery.net.{DataStore, KorzinaUpdater}
+import com.tytosoft.delivery.views.TwoLineTextView
 
 class KorzinaActivity extends BusActivity with OnClickListener with IYesNoListener{
 

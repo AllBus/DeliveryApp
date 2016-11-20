@@ -2,14 +2,12 @@ package com.tytosoft.delivery.net
 
 import java.util.concurrent.Executors
 
-import com.kos.delivery.net.DataStore
 import com.kos.fastuimodule.good.common.IDSet
 import com.kos.fastuimodule.good.common.model.IEntity
 import com.kos.fastuimodule.good.common.system.collection.ListLoadingData
 import com.kos.fastuimodule.good.common.system.{EConstructType, GoodPostArguments}
-import com.tytosoft.badgesapp.net.Program
-import com.tytosoft.badgesapp.net.constructors.EntityConstructor
-import com.tytosoft.badgesapp.net.loader.GoodBasesLoader
+import com.tytosoft.delivery.net.loader.GoodBasesLoader
+import com.tytosoft.delivery.net.constructors.EntityConstructor
 import com.tytosoft.delivery.model.ListModel
 
 
