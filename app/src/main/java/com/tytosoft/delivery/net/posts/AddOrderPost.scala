@@ -2,9 +2,7 @@ package com.tytosoft.badgesapp.net.posts
 
 import com.kos.fastuimodule.common.net._
 import com.kos.fastuimodule.good.common.core.IContexter
-import com.tytosoft.delivery.common.utils.StringUtils
-import com.tytosoft.delivery.model.data.UserProfile
-import com.tytosoft.delivery.model.data.Korzina
+import com.tytosoft.delivery.model.data.{Korzina, UserProfile}
 import com.tytosoft.delivery.net.Program
 import okhttp3.RequestBody
 
@@ -19,7 +17,6 @@ class AddOrderPost(info: IContexter, constructor: IJSONConstructor, profile: Use
 		args.encodePost()
 	}
 
-
 	override def generateGet(): String = {
 		args.encodeGET()
 	}
@@ -33,8 +30,8 @@ class AddOrderPost(info: IContexter, constructor: IJSONConstructor, profile: Use
 
 		for (i← (0 until korzina.size).optimized) {
 			val x=korzina(i)
-			builder.add(Program.POST_DATA, Program.POST_ORDER, "product_id",i.toString, x.getId.toString)
-			builder.add(Program.POST_DATA, Program.POST_ORDER, "quantity"  ,i.toString,  x.count.toString)
+			builder.add(Program.POST_DATA, Program.POST_ORDER, i.toString,"product_id", x.getId.toString)
+			builder.add(Program.POST_DATA, Program.POST_ORDER, i.toString,"quantity"  ,  x.count.toString)
 		}
 		builder
 	}

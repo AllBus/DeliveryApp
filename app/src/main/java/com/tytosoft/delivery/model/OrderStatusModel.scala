@@ -37,6 +37,7 @@ class OrderStatusModel extends BaseModel with ISave{
 
 		color= textColor match {
 			case "positive" ⇒ 0xFF7BAE37
+			case "negative" ⇒ 0xffca170a
 			case s ⇒
 				Try(Color.parseColor(s)).getOrElse(Color.BLACK)
 		}

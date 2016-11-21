@@ -3,7 +3,7 @@ package com.kos.delivery;
 import android.app.Application;
 import android.test.ApplicationTestCase;
 
-import com.kos.delivery.net.DataStore;
+import com.tytosoft.delivery.net.DataStore;
 
 
 /**

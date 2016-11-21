@@ -50,4 +50,5 @@
 	<color name="dashDivider">#acacac</color>
 	<color name="orderBack">#e7e7e7</color>
 	<color name="orderStatus">@color/colorPrimary</color>
+	<color name="negative">#ca170a</color>
 </resources>

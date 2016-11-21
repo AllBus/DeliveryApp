@@ -29,9 +29,10 @@ class EntityConstructor[T <: IEntity](val context:IContexter,
 			return
 
 
-		//LogD("EntityConstructor "+arguments.ids+" "+arguments.infoType)
+//		LogD("EntityConstructor "+arguments.ids+" "+arguments.infoType)
 //		LogD("Type "+arguments.constructType)
 //		LogD("OBJ "+tjsonObject.getCode)
+//		println("Выведи текст")
 //		val obj=tjsonObject.getJsonObject
 //		if (obj!=null){
 //			LogD(obj.toString(2))
