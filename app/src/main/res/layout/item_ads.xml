@@ -38,7 +38,9 @@
 
 				android:layout_height="wrap_content"
 
+				android:layout_marginLeft="16dp"
 				android:layout_marginStart="16dp"
+
 				tools:text="-50%"/>
 
 			<TextView
@@ -46,9 +48,11 @@
 				android:id="@+id/name"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:layout_alignLeft="@id/discount"
 				android:layout_alignStart="@id/discount"
 
 				android:layout_below="@id/discount"
+				android:layout_toLeftOf="@+id/addToTashBtn"
 				android:layout_toStartOf="@+id/addToTashBtn"
 
 
@@ -67,6 +71,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_alignParentBottom="true"
+				android:layout_alignParentRight="true"
 				android:layout_alignParentEnd="true"
 
 
@@ -78,7 +83,9 @@
 				android:id="@+id/countLabel"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:layout_alignRight="@id/name"
 				android:layout_alignEnd="@id/name"
+				android:layout_alignLeft="@id/discount"
 				android:layout_alignStart="@id/discount"
 
 				android:layout_below="@id/name"
@@ -98,7 +105,9 @@
 				android:layout_height="wrap_content"
 
 				android:layout_above="@id/addToTashBtn"
+				android:layout_alignRight="@id/addToTashBtn"
 				android:layout_alignEnd="@id/addToTashBtn"
+				android:layout_marginRight="16dp"
 				android:layout_marginEnd="16dp"
 
 				android:textSize="12sp"

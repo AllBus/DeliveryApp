@@ -54,8 +54,11 @@
 				android:layout_width="match_parent"
 
 				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
 				android:layout_alignParentEnd="true"
+				android:layout_marginLeft="@dimen/mainPadding"
 				android:layout_marginStart="@dimen/mainPadding"
+				android:layout_toRightOf="@+id/statusName"
 				android:layout_toEndOf="@+id/statusName"
 				android:gravity="end"
 				android:textColor="@color/orderStatus"

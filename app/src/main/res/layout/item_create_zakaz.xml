@@ -13,6 +13,7 @@
 	android:textSize="20sp"
 	android:id="@+id/name"
 	android:layout_alignStart="@+id/edit"
+	android:layout_alignLeft="@+id/edit"
 	android:paddingTop="125dp"
 	android:paddingBottom="16dp"
 	/>
