@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-	<item android:drawable="@drawable/border_white_btn_select" />
+	<item
+		android:state_enabled="false"
+		android:drawable="@drawable/border_white_disable_state_btn"/>
+	<item
+		android:state_pressed="true"
+		android:drawable="@drawable/border_white_press_state_btn"/>
+	<item
+		android:state_focused="true"
+		android:drawable="@drawable/border_white_focus_state_btn"/>
+	<item
+
+		android:drawable="@drawable/border_white_normal_state_btn"/>
 </selector>

@@ -51,4 +51,42 @@
 	<color name="orderBack">#e7e7e7</color>
 	<color name="orderStatus">@color/colorPrimary</color>
 	<color name="negative">#ca170a</color>
+
+	<!-- Цвета кнопок -->
+	<color name="colorPressFill">@color/colorBtnFillPress</color>
+	<color name="colorPressBorder">@color/colorBtnStrokePress</color>
+	<color name="colorFocusFill">@color/colorBtnFillPress</color>
+	<color name="colorFocusBorder">@color/colorBtnStrokePress</color>
+	<color name="colorDisableFill">@color/colorBtnFillDisable</color>
+	<color name="colorDisableBorder">@color/colorBtnStrokeDisable</color>
+	<color name="colorNormalFill">@color/colorBtnFill</color>
+	<color name="colorNormalBorder">@color/colorBtnStroke</color>
+
+	<color name="whitePressFill">@color/colorBtnFillPress</color>
+	<color name="whitePressBorder">@color/whiteBtnStrokePress</color>
+	<color name="whiteFocusFill">@color/colorBtnFillPress</color>
+	<color name="whiteFocusBorder">@color/whiteBtnStrokePress</color>
+	<color name="whiteDisableFill">@color/whiteBtnFillDisable</color>
+	<color name="whiteDisableBorder">@color/whiteBtnStrokeDisable</color>
+	<color name="whiteNormalFill">@color/whiteBtnFill</color>
+	<color name="whiteNormalBorder">@color/whiteBtnStroke</color>
+
+	<color name="borderPressFill">@color/borderBtnFillPress</color>
+	<color name="borderPressBorder">@color/colorBtnStrokePress</color>
+	<color name="borderFocusFill">@color/borderBtnFillPress</color>
+	<color name="borderFocusBorder">@color/colorBtnStrokePress</color>
+	<color name="borderDisableFill">@color/borderBtnFillDisable</color>
+	<color name="borderDisableBorder">@color/colorBtnStrokeDisable</color>
+	<color name="borderNormalFill">@color/borderBtnFill</color>
+	<color name="borderNormalBorder">@color/colorBtnStroke</color>
+
+	<color name="border_whitePressFill">@color/borderWhiteBtnFillPress</color>
+	<color name="border_whitePressBorder">@color/colorBtnStrokeDisable</color>
+	<color name="border_whiteFocusFill">@color/borderWhiteBtnFillPress</color>
+	<color name="border_whiteFocusBorder">@color/colorBtnStrokePress</color>
+	<color name="border_whiteDisableFill">@color/borderWhiteBtnFillDisable</color>
+	<color name="border_whiteDisableBorder">@color/colorBtnStrokePress</color>
+	<color name="border_whiteNormalFill">@color/borderWhiteBtnFill</color>
+	<color name="border_whiteNormalBorder">@color/colorBtnStroke</color>
+
 </resources>

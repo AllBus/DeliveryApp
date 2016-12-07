@@ -12,7 +12,7 @@ import android.telephony.PhoneNumberFormattingTextWatcher
 import android.text.{Editable, InputType}
 import android.view.View.OnClickListener
 import android.view._
-import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.{EditorInfo, InputMethodManager}
 import android.widget._
 import com.kos.fastuimodule.common.ui.U
 import com.squareup.otto.Subscribe
@@ -68,6 +68,7 @@ class ActivityCreateZakaz extends BusActivity
 		setupToolBarWithBackButton(R.id.toolbar)
 
 		getWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
+
 		setTitle("")
 	}
 
@@ -86,10 +87,19 @@ class ActivityCreateZakaz extends BusActivity
 
 	def restoreResult(): Unit ={
 
+
+
 		UU.visible(progressBar,layoutResult,lastProfile.progressState==1)
 		if (Program.isZakazComplete(lastProfile.progressState)){
 			U.text(resultTitle,R.string.createZakazCompleteName)
 			U.text(resultMessage,R.string.createZakazCompleteText)
+
+			if (resultTitle != null) {
+				val imm = getSystemService(Context.INPUT_METHOD_SERVICE).asInstanceOf[InputMethodManager]
+				imm.hideSoftInputFromWindow(resultTitle.getWindowToken, 0)
+			}
+			if (Program.isZakazComplete(lastProfile.progressState))
+				setResult(Activity.RESULT_OK,null)
 		}else{
 			U.text(resultTitle,R.string.createZakazErrorName)
 			U.text(resultMessage,R.string.createZakazErrorText)
@@ -104,6 +114,11 @@ class ActivityCreateZakaz extends BusActivity
 				return super.onOptionsItemSelected (item)
 		}
 		true
+	}
+
+	override def onBackPressed(): Unit ={
+
+		super.onBackPressed()
 	}
 
 	override def onStart(): Unit = {
@@ -280,7 +295,10 @@ class ActivityCreateZakaz extends BusActivity
 				if (nextPage()) {
 					completeLayout.setVisibility(View.VISIBLE)
 					lastProfile.progressState=1
+			    //		getWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
+
 					restoreResult()
+
 					ProgramRun.addOrder(lastProfile,lastKorzina)
 				}
 
