@@ -37,7 +37,7 @@ class TAllInfo extends IContexter {
 		builder
 	}
 
-	override def sendError(error: ErrorElement) {
+	override def sendError(error: ErrorElement):Unit = {
 	}
 
 	private[this] val uid ="test_app"

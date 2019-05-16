@@ -14,7 +14,7 @@ class ItemHolder[U](topView:View,itemClick:OnClickListener) extends RecyclerView
 
 	itemView.setOnClickListener(itemClick)
 
-	def bind(position:Int,element:U){
+	def bind(position:Int,element:U):Unit ={
 		itemView.setTag(element)
 	}
 }

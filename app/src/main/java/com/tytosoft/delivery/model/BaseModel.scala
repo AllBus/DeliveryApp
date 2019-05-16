@@ -61,7 +61,7 @@ class BaseModel extends Comparable[BaseModel] with ISave with IEntity with IData
 
 	def getTime: String = Utils.getTimeText(date)
 
-	def baseSON(obj: JSONObject) {
+	def baseSON(obj: JSONObject):Unit = {
 		date = SON.get(obj, BaseModel._date, date / 1000) * 1000
 		sort = SON.get(obj, BaseModel._sort, sort)
 		id = SON.get(obj, BaseModel._id, id)

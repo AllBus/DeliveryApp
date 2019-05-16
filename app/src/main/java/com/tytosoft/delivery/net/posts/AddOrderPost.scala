@@ -6,7 +6,7 @@ import com.tytosoft.delivery.model.data.{Korzina, UserProfile}
 import com.tytosoft.delivery.net.Program
 import okhttp3.RequestBody
 
-import scalaxy.loops._
+
 /**
   * Created by Kos on 20.07.2016.
   */
@@ -28,7 +28,7 @@ class AddOrderPost(info: IContexter, constructor: IJSONConstructor, profile: Use
 		builder.add(Program.POST_DATA,Program.POST_CLIENT,"name", profile.name)
 		builder.add(Program.POST_DATA,Program.POST_CLIENT,"address","title", profile.address)
 
-		for (i← (0 until korzina.size).optimized) {
+		for (i← 0 until korzina.size) {
 			val x=korzina(i)
 			builder.add(Program.POST_DATA, Program.POST_ORDER, i.toString,"product_id", x.getId.toString)
 			builder.add(Program.POST_DATA, Program.POST_ORDER, i.toString,"quantity"  ,  x.count.toString)

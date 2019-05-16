@@ -26,9 +26,9 @@ class OrderModelController(finder: ID ⇒ OrderModel) extends IListModel[ID,Orde
 
 			val pred=noOrderedList.view.map(find).sortBy(- _.getDateValue)
 
-			list = pred.map(_.getId).force
+			list = pred.map(_.getId).toSeq
 
-			updates=pred.flatMap(_.products.map(_.getId)).force
+			updates=pred.flatMap(_.products.map(_.getId)).toSeq
 			true
 		}
 		else

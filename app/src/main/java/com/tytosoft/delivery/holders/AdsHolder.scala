@@ -14,8 +14,6 @@ import com.tytosoft.delivery.adapters.holders.AdsProductHolder
 import com.tytosoft.delivery.model.ListModel
 import com.tytosoft.delivery.net.DataStore
 
-import scalaxy.beans._
-
 
 /**
   * Created by Kos on 07.07.2016.
@@ -39,11 +37,9 @@ class AdsHolder(val view:View,itemClick:OnClickListener,clickBtn:OnClickListener
 
 			mSectionsPagerAdapter.notifyDataSetChanged()
 
-			indicator.set(
-				//NumberOfItems=mSectionsPagerAdapter.getColumnCount(0),
-				NumberOfItems=mSectionsPagerAdapter.getCount,
-				DotClickListener=this
-			)
+			indicator.setNumberOfItems(mSectionsPagerAdapter.getCount)
+			indicator.setDotClickListener(this)
+
 		}else{
 			for (i ← 0 until Math.min(MAX_ADS_COUNT,list.size)){
 				pagesHolder.get(i).bind(i,DataStore.ads.get(list(i)))
@@ -92,16 +88,11 @@ class AdsHolder(val view:View,itemClick:OnClickListener,clickBtn:OnClickListener
 
 	val mSectionsPagerAdapter = new SamplePagerAdapter(pages)//new SectionsPagerAdapter(fm)
 
-	indicator.set(
-		//NumberOfItems=mSectionsPagerAdapter.getColumnCount(0),
-		NumberOfItems=mSectionsPagerAdapter.getCount,
-		DotClickListener=this
-	)
+	indicator.setNumberOfItems(mSectionsPagerAdapter.getCount)
+	indicator.setDotClickListener(this)
 
-	pager.set(
 
-		Adapter=mSectionsPagerAdapter
-	)
+	pager.setAdapter(mSectionsPagerAdapter	)
 	pager.addOnPageChangeListener(this)
 
 	override def onDotClick(index: Int): Unit = pager.setCurrentItem(index)
@@ -111,10 +102,10 @@ class AdsHolder(val view:View,itemClick:OnClickListener,clickBtn:OnClickListener
 
 
 
-	override def onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+	override def onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int):Unit = {
 	}
 
-	override def onPageSelected(position: Int) {
+	override def onPageSelected(position: Int):Unit = {
 		indicator.setSelectedItem(position, true)
 		DataStore.preferences.adsIndex=position
 	}

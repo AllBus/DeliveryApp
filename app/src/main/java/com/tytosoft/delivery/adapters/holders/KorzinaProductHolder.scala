@@ -32,7 +32,7 @@ class KorzinaProductHolder(itemView: View,itemClick:OnClickListener,plusClick:On
 	}
 	//val backDrawable=new TicketDrawable(5,6*ResHelper.dp(itemView.getContext))
 
-	override def bind(position: Int, elem: OrderProductModel) {
+	override def bind(position: Int, elem: OrderProductModel):Unit = {
 		super.bind(position,elem)
 
 		val product=elem.product

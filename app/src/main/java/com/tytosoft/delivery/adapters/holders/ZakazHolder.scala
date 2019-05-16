@@ -26,7 +26,7 @@ class ZakazHolder(itemView: View, clickAddToTash: OnClickListener, itemClick: On
 	val backDrawable=new TicketDrawable(12,6*ResHelper.dp(itemView.getContext))
 	itemView.setBackground(backDrawable)
 
-	override def bind(position: Int, elem: IEntity) {
+	override def bind(position: Int, elem: IEntity):Unit = {
 		super.bind(position, elem)
 		elem match {
 			case element: OrderModel ⇒

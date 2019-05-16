@@ -43,50 +43,54 @@ class KorzinaActivity extends BusActivity with OnClickListener with IYesNoListen
 
 	)
 
-	lazy val itemClick:OnClickListener= (view: View) => {
-		view.getTag match {
-			case product: OrderProductModel ⇒
-				if (!product.isNull) {
-					show(classOf[ProductActivity], product.getId)
-				}
-
-			case _ ⇒
+	lazy val itemClick:OnClickListener = new OnClickListener {
+		def onClick(view: View): Unit = {
+			view.getTag match {
+				case product: OrderProductModel ⇒
+					if (!product.isNull) {
+						show(classOf[ProductActivity], product.getId)
+					}
+				case _ ⇒
+			}
 		}
-
 	}
 
-	lazy val plusClick:OnClickListener= (view: View) => {
-		view.getTag match {
-			case v: View ⇒
-				v.getTag match {
-					case product: OrderProductModel ⇒
-						if (!product.isNull) {
+	lazy val plusClick:OnClickListener= new OnClickListener {
+		def onClick(view: View): Unit = {
+			view.getTag match {
+				case v: View ⇒
+					v.getTag match {
+						case product: OrderProductModel ⇒
+							if (!product.isNull) {
 
-							plusItem(product)
-						}
+								plusItem(product)
+							}
 
-					case _ ⇒
-				}
-			case _ ⇒
+						case _ ⇒
+					}
+				case _ ⇒
+			}
+
 		}
-
-	}
-	lazy val minusClick:OnClickListener= (view: View) => {
-		view.getTag match {
-			case v: View ⇒
-				v.getTag match {
-					case product: OrderProductModel ⇒
-						if (!product.isNull) {
-							minusItem(product)
-						}
-
-					case _ ⇒
-				}
-			case _ ⇒
-		}
-
 	}
 
+	lazy val minusClick:OnClickListener= new OnClickListener {
+		def onClick(view: View): Unit = {
+			view.getTag match {
+				case v: View ⇒
+					v.getTag match {
+						case product: OrderProductModel ⇒
+							if (!product.isNull) {
+								minusItem(product)
+							}
+
+						case _ ⇒
+					}
+				case _ ⇒
+			}
+
+		}
+	}
 
 	def plusItem(product:OrderProductModel): Unit ={
 		product+=1
@@ -103,7 +107,7 @@ class KorzinaActivity extends BusActivity with OnClickListener with IYesNoListen
 		}
 		updateState()
 	}
-	protected override def onCreate(savedInstanceState: Bundle) {
+	protected override def onCreate(savedInstanceState: Bundle):Unit = {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_korzina)
 		setupToolBarWithBackButton(R.id.toolbar)
@@ -202,7 +206,7 @@ class KorzinaActivity extends BusActivity with OnClickListener with IYesNoListen
 
 	}
 
-	override protected def onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+	override protected def onActivityResult(requestCode: Int, resultCode: Int, data: Intent):Unit = {
 		if (requestCode == ActivityCreateZakaz.CREATE_ZAKAZ_CODE) {
 			if (resultCode == Activity.RESULT_OK) {
 				this.finish()

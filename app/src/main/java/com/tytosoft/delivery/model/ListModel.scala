@@ -30,7 +30,7 @@ class ListModel extends BaseModel {
 	private[this] var parent_id: ID = 0
 	private[this] var list = Seq[ID]()
 
-	override def baseSON(obj: JSONObject) {
+	override def baseSON(obj: JSONObject):Unit = {
 		super.baseSON(obj)
 		kind = SON.get(obj, "type", kind)
 		parent_id = SON.get(obj, "parent_id", parent_id)

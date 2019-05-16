@@ -48,7 +48,7 @@ object EventSaver {
 		val sonBuf = new ArrayBuffer[String]()
 		var buf = new ArrayBuffer[(Long, ID)]()
 
-		if (context == null) return CommonEventSaver.toJSONArray(sonBuf) → buf
+		if (context == null) return CommonEventSaver.toJSONArray(sonBuf.toSeq) → buf.toSeq
 
 		try {
 			val db = context.getDB
@@ -83,7 +83,7 @@ object EventSaver {
 		catch {
 			case ignored: Exception ⇒
 		}
-		CommonEventSaver.toJSONArray(sonBuf) → buf
+		CommonEventSaver.toJSONArray(sonBuf.toSeq) → buf.toSeq
 	}
 
 }

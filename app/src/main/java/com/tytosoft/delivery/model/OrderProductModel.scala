@@ -37,7 +37,7 @@ class OrderProductModel extends BaseModel  with Cloneable{
 	var count=0
 	private[this] var price=0
 
-	override def baseSON(obj: JSONObject) {
+	override def baseSON(obj: JSONObject):Unit = {
 		super.baseSON(obj)
 
 		count=SON.get(obj,"count",count)

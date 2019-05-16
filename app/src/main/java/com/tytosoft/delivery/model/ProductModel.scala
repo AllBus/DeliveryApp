@@ -39,7 +39,7 @@ class ProductModel extends BaseModel {
 	private[this] var top = true
 
 
-	override def baseSON(obj: JSONObject) {
+	override def baseSON(obj: JSONObject):Unit = {
 		super.baseSON(obj)
 
 	//	LogD(obj.toString(2))

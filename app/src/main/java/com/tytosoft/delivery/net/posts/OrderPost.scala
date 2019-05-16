@@ -7,7 +7,7 @@ import com.tytosoft.delivery.model.data.Korzina
 import com.tytosoft.delivery.net.Program
 import okhttp3.RequestBody
 
-import scalaxy.loops._
+
 
 /**
   * Created by Kos on 20.07.2016.

@@ -17,6 +17,7 @@ object SActivity{
 	val KEY_ID = "ID"
 	val NONE_ID= -2
 }
+
 trait SActivity {
 
 	self: AppCompatActivity =>
@@ -34,17 +35,15 @@ trait SActivity {
 	def drawable(@DrawableRes id: Int) =
 		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
 			getDrawable(id)
-
 		}
 		else {
 			getResources.getDrawable(id)
-
 		}
 
 	def dimension(@DimenRes id: Int) =	getResources.getDimension(id)
 
 	def addClick(@IdRes viewId:Int,clickListener: OnClickListener): Unit ={
-		findViewById(viewId) match{
+		findViewById[View](viewId) match{
 			case v:View ⇒ v.setOnClickListener(clickListener)
 			case _ ⇒
 		}
@@ -64,7 +63,7 @@ trait SActivity {
 	}
 
 	def setupToolBar(@IdRes toolbarId:Int): Unit ={
-		val toolbar = findViewById(toolbarId).asInstanceOf[Toolbar]
+		val toolbar = findViewById[Toolbar](toolbarId)
 		setSupportActionBar(toolbar)
 	}
 

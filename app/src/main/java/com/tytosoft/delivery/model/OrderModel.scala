@@ -6,8 +6,8 @@ import com.tytosoft.delivery.data.AppPrefererences
 import com.tytosoft.delivery.model.data.Korzina
 import com.tytosoft.delivery.model.utils.{ISave, ModeLUtils, SONS}
 import org.json.JSONObject
+import scala.collection.JavaConverters._
 
-import scala.collection.JavaConversions._
 /**
   * Created by Kos on 13.07.2016.
   */
@@ -31,7 +31,7 @@ class OrderModel extends BaseModel with ISave{
 		this.id=id
 		summa=korzina.fullCost()
 		delivery_cost=korzina.deliveryCost(preferences)
-		product=korzina.list
+		product=korzina.list.asScala.toSeq
 		date=System.currentTimeMillis()
 	}
 
@@ -54,7 +54,7 @@ class OrderModel extends BaseModel with ISave{
 
 	private[this] var address=""
 
-	override def baseSON(obj: JSONObject) {
+	override def baseSON(obj: JSONObject):Unit = {
 		super.baseSON(obj)
 		address=SONS.get(obj,"address","title",address)
 		summa=SON.get(obj,"summa",summa)

@@ -28,25 +28,25 @@ class NavActivity extends BusActivity {
 
 	var listId:ID=ListModel.NONE_ID
 
-	protected override def onCreate(savedInstanceState: Bundle) {
+	protected override def onCreate(savedInstanceState: Bundle):Unit = {
 		super.onCreate(savedInstanceState)
 		setupActivity(savedInstanceState)
 
 		drawer.setScrimColor(Color.TRANSPARENT)
 		drawer.addDrawerListener(new DrawerLayout.DrawerListener() {
-			def onDrawerSlide(drawerView: View, slideOffset: Float) {
+			def onDrawerSlide(drawerView: View, slideOffset: Float):Unit = {
 				translateMain(slideOffset)
 			}
 
-			def onDrawerOpened(drawerView: View) {
+			def onDrawerOpened(drawerView: View):Unit = {
 				translateMain(1)
 			}
 
-			def onDrawerClosed(drawerView: View) {
+			def onDrawerClosed(drawerView: View):Unit = {
 				translateMain(0)
 			}
 
-			def onDrawerStateChanged(newState: Int) {
+			def onDrawerStateChanged(newState: Int):Unit = {
 			}
 		})
 
@@ -82,7 +82,7 @@ class NavActivity extends BusActivity {
 		translateMain(if (drawer.isDrawerOpen(GravityCompat.END)) 1 else 0)
 	}
 
-	def translateMain(slideOffset:Float){
+	def translateMain(slideOffset:Float):Unit ={
 
 		viewMain.setTranslationX(-slideOffset * zakaz_bar_width)
 		viewMain.setScaleX(1 - (slideOffset * 0.25f))
@@ -135,36 +135,40 @@ class NavActivity extends BusActivity {
 //==================================
 	def isProduct(model: ProductModel)=true
 
-	lazy val itemClick:OnClickListener= (view: View) => {
-		view.getTag match {
-			case ads: AdsModel ⇒
-				if (!ads.isNull) {
-					show(classOf[ProductActivity], ads.getProductId)
-				}
-			case event: ProductModel ⇒
-				if (isProduct(event))
-					show(classOf[ProductActivity],event.getId)
-				else
-					show(classOf[CatalogActivity],event.getId)
-			case _ ⇒
-		}
+	lazy val itemClick:OnClickListener= new OnClickListener {
+		def onClick(view: View): Unit = {
+			view.getTag match {
+				case ads: AdsModel ⇒
+					if (!ads.isNull) {
+						show(classOf[ProductActivity], ads.getProductId)
+					}
+				case event: ProductModel ⇒
+					if (isProduct(event))
+						show(classOf[ProductActivity], event.getId)
+					else
+						show(classOf[CatalogActivity], event.getId)
+				case _ ⇒
+			}
 
+		}
 	}
 
-	lazy val btnClick:OnClickListener= (view: View) => {
-		view.getTag match {
-			case ads: AdsModel ⇒
-				lastKorzina.add(ads.getProductId, ads.getPricesCurrent, 1)
-				saveData(lastKorzina)
-				updateKorzina()
-			case event: ProductModel ⇒
-				//if (isProduct(event)){
+	lazy val btnClick:OnClickListener= new OnClickListener {
+		def onClick(view: View): Unit = {
+			view.getTag match {
+				case ads: AdsModel ⇒
+					lastKorzina.add(ads.getProductId, ads.getPricesCurrent, 1)
+					saveData(lastKorzina)
+					updateKorzina()
+				case event: ProductModel ⇒
+					//if (isProduct(event)){
 					lastKorzina.add(event.getId, event.getPricesCurrent, 1)
 					saveData(lastKorzina)
 					updateKorzina()
 				//}
 
-			case _ ⇒
+				case _ ⇒
+			}
 		}
 	}
 

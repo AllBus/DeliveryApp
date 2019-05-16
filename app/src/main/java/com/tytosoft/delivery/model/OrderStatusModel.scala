@@ -28,7 +28,7 @@ class OrderStatusModel extends BaseModel with ISave{
 	private[this] var title=""
 	private[this] var color=Color.BLACK
 
-	override def baseSON(obj: JSONObject) {
+	override def baseSON(obj: JSONObject):Unit = {
 		super.baseSON(obj)
 		status=SON.get(obj,"status",status)
 		title=SON.get(obj,"title",title)

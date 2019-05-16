@@ -25,7 +25,7 @@ class AdsProductHolder(itemTop: View, clickAddToTash: OnClickListener, itemClick
 	oldPrice.setPaintFlags(oldPrice.getPaintFlags | Paint.STRIKE_THRU_TEXT_FLAG)
 	//val backDrawable=new TicketDrawable(5,6*ResHelper.dp(itemView.getContext))
 
-	override def bind(position: Int, elem: IEntity) {
+	override def bind(position: Int, elem: IEntity):Unit = {
 		itemView.setTag(elem)
 
 		if (elem.isNull){

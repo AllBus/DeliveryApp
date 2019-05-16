@@ -10,7 +10,7 @@ import com.tytosoft.delivery.data.AppPrefererences
 import com.tytosoft.delivery.model.OrderProductModel
 import com.tytosoft.delivery.net.BusConstants
 
-import scalaxy.loops._
+
 
 /**
   * Created by Kos on 09.07.2016.
@@ -23,7 +23,7 @@ class Korzina() extends IChangedListModel[ID, OrderProductModel, util.ArrayList[
 
 	def add(productId: ID, productPrice: Int, productCount: Int): Unit = {
 
-		for (i ← (0 until list.size()).optimized) {
+		for (i ← 0 until list.size()) {
 			val p = list.get(i)
 			if (p.getId == productId) {
 				summa -= p.cost
@@ -85,7 +85,7 @@ class Korzina() extends IChangedListModel[ID, OrderProductModel, util.ArrayList[
 		if (list.size()==0)
 			return false
 
-		for (i ← (0 until list.size()).optimized) {
+		for (i ← (0 until list.size())) {
 			if (!list.get(i).isActive)
 				return false
 		}
@@ -113,7 +113,7 @@ class Korzina() extends IChangedListModel[ID, OrderProductModel, util.ArrayList[
 	  * @return элемент по указанному id
 	  */
 	override def find(id: ID): OrderProductModel = {
-		for (i ← (0 until list.size()).optimized) {
+		for (i ← (0 until list.size())) {
 			if (list.get(i).getId == id)
 				return list.get(i)
 		}
@@ -127,7 +127,7 @@ class Korzina() extends IChangedListModel[ID, OrderProductModel, util.ArrayList[
 	  * @return номер элемента в списке
 	  */
 	override def indexOf(id: ID): Int = {
-		for (i ← (0 until list.size()).optimized) {
+		for (i ← (0 until list.size())) {
 			if (list.get(i).getId == id)
 				return i
 		}

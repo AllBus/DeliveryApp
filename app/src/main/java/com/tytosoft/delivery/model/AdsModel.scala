@@ -21,7 +21,7 @@ class AdsModel extends ProductModel{
 
 	private[this] var product:ID=0L
 
-	override def baseSON(obj: JSONObject) {
+	override def baseSON(obj: JSONObject):Unit = {
 		super.baseSON(obj)
 
 		product =SON.get(obj,"product",product )

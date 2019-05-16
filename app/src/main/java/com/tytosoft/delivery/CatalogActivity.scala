@@ -19,7 +19,7 @@ class CatalogActivity extends NavActivity with OnClickListener{
 
 	import DataStore._
 //	private[this] lazy val progressBar:ProgressBar=find(R.id.progressBar)
-	protected override def onCreate(savedInstanceState: Bundle) {
+	protected override def onCreate(savedInstanceState: Bundle):Unit = {
 		super.onCreate(savedInstanceState)
 	}
 
@@ -33,7 +33,7 @@ class CatalogActivity extends NavActivity with OnClickListener{
 
 	lazy val thisListId=getID
 
-	override def setupActivity(savedInstanceState: Bundle) {
+	override def setupActivity(savedInstanceState: Bundle):Unit = {
 		setContentView(R.layout.activity_main)
 
 		Seq(R.id.fab).foreach(addClick(_,this))

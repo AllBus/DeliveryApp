@@ -7,7 +7,7 @@ import com.tytosoft.delivery.common.utils.SActivity
 
 class AboutActivity extends AppCompatActivity with SActivity {
 
-	protected override def onCreate(savedInstanceState: Bundle) {
+	protected override def onCreate(savedInstanceState: Bundle):Unit = {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_about)
 

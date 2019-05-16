@@ -59,19 +59,21 @@ class ZakazBarFragment extends BusFragment with OnRefreshListener {
 		itemClick
 	)
 
-	val itemClick: OnClickListener = (view: View) => {
-		view.getTag match{
-			case product: ProductModel ⇒
-				show(classOf[ProductActivity],product.getId)
-			case order:OrderModel ⇒
-				show(classOf[DetailActivity],order.getId)
+	val itemClick: OnClickListener = new OnClickListener {
+		def onClick(view: View): Unit = {
+			view.getTag match {
+				case product: ProductModel ⇒
+					show(classOf[ProductActivity], product.getId)
+				case order: OrderModel ⇒
+					show(classOf[DetailActivity], order.getId)
 				//order.addToKorzina( lastKorzina)
 				//show(classOf[KorzinaActivity])
-			case _ ⇒
+				case _ ⇒
+			}
 		}
 	}
 
-	override def onCreate(savedInstanceState: Bundle) {
+	override def onCreate(savedInstanceState: Bundle):Unit = {
 		super.onCreate(savedInstanceState)
 		if (getArguments != null) {
 			mParam1 = getArguments.getString(ZakazBarFragment.ARG_PARAM1)

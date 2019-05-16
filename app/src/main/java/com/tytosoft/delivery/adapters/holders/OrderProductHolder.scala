@@ -40,7 +40,7 @@ class OrderProductHolder(topView: View,val itemClick:OnClickListener) extends It
 		nextBtn.setOnClickListener(itemClick)
 	}
 
-	override def bind(position: Int, elem: OrderModel) {
+	override def bind(position: Int, elem: OrderModel):Unit = {
 		super.bind(position,elem)
 
 

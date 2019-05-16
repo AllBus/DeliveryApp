@@ -16,20 +16,21 @@ class DetailActivity extends BusActivity with OnClickListener {
 	lazy val id=getID
 	lazy val order=orders.get(id)
 
-	lazy val itemClick: OnClickListener = (view: View) => {
-		view.getTag match{
-			case product: ProductModel ⇒
-				show(classOf[ProductActivity],product.getId)
-			case order:OrderModel ⇒
+	lazy val itemClick: OnClickListener = new OnClickListener {
+		def onClick(view: View): Unit = {
+			view.getTag match {
+				case product: ProductModel ⇒
+					show(classOf[ProductActivity], product.getId)
+				case order: OrderModel ⇒
+					order.addToKorzina(lastKorzina)
+					show(classOf[KorzinaActivity])
+				case _ ⇒
 
-				order.addToKorzina( lastKorzina)
-				show(classOf[KorzinaActivity])
-			case _ ⇒
-
+			}
 		}
 	}
 
-	override protected def onCreate(savedInstanceState: Bundle) {
+	override protected def onCreate(savedInstanceState: Bundle):Unit = {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_detail)
 

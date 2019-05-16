@@ -22,7 +22,7 @@ class SimpleHolder(topView:View,itemClick:OnClickListener) extends RecyclerView.
 
 	itemView.setOnClickListener(itemClick)
 
-	def bind(position:Int,element:IEntity){
+	def bind(position:Int,element:IEntity):Unit ={
 		itemView.setTag(element)
 		if (image!=null)
 			U.image(image,element.getImage)

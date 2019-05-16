@@ -15,7 +15,7 @@ class AdsItemHolder(itemView:View, itemClick:OnClickListener,btnClick:OnClickLis
 
 
 	val adsHolder:AdsHolder=new AdsHolder(find(R.id.adsLayout),itemClick,btnClick)
-	override def bind(position:Int,element:IEntity){
+	override def bind(position:Int,element:IEntity):Unit ={
 		element match {
 			case e : ListModel ⇒
 				adsHolder.setList( e)

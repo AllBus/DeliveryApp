@@ -26,7 +26,7 @@ class SectionModel extends ProductModel{
 		//product - в разделе уже элементы
 	private[this] var parent_id=0 //[Integer | null]null - текущий раздел является корневым
 
-	override def baseSON(obj: JSONObject) {
+	override def baseSON(obj: JSONObject):Unit = {
 		super.baseSON(obj)
 
 		code=SON.get(obj,"code",code)

@@ -84,9 +84,9 @@ class EntityConstructor[T <: IEntity](val context:IContexter,
 
 			if (items.nonEmpty) {
 				if (needSave) {
-					saver(builder)
+					saver(builder.toSeq)
 				}
-				allInfo.newElement(listData.push(items, b))
+				allInfo.newElement(listData.push(items.toSeq, b))
 
 			}
 		}

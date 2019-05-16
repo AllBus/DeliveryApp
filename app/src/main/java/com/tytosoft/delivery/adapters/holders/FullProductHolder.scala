@@ -31,7 +31,7 @@ class FullProductHolder(itemView: View, clickAddToTash: OnClickListener, itemCli
 		oldPrice.setPaintFlags(oldPrice.getPaintFlags | Paint.STRIKE_THRU_TEXT_FLAG)
 	//val backDrawable=new TicketDrawable(5,6*ResHelper.dp(itemView.getContext))
 
-	override def bind(position: Int, elem: IEntity) {
+	override def bind(position: Int, elem: IEntity):Unit = {
 		super.bind(position, elem)
 		if (elem.isNull){
 			dataLayout.setVisibility(View.INVISIBLE)

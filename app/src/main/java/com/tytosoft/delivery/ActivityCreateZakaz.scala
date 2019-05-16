@@ -25,8 +25,8 @@ import com.tytosoft.delivery.views.dots.{OnDotClickListener, ShaperIndicator}
 object ActivityCreateZakaz {
 	val SECTION_ID: Int = 1000
 
-	private val SAVE_COMPLETE_VISIBLE="completeVisible"
-	val CREATE_ZAKAZ_CODE=2000
+	private val SAVE_COMPLETE_VISIBLE = "completeVisible"
+	val CREATE_ZAKAZ_CODE = 2000
 }
 
 class ActivityCreateZakaz extends BusActivity
@@ -45,24 +45,24 @@ class ActivityCreateZakaz extends BusActivity
 	private[this] lazy val completeLayout = find[View](R.id.completeLayout)
 	private[this] lazy val progressBar = find[View](R.id.progressBar)
 	private[this] lazy val layoutResult = find[View](R.id.layoutResult)
-	private[this] lazy val resultTitle:TextView=find(R.id.resultTitle)
-	private[this] lazy val resultMessage:TextView=find(R.id.resultMessage)
+	private[this] lazy val resultTitle: TextView = find(R.id.resultTitle)
+	private[this] lazy val resultMessage: TextView = find(R.id.resultMessage)
 
-	protected override def onCreate(savedInstanceState: Bundle) {
+	protected override def onCreate(savedInstanceState: Bundle):Unit = {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_create_zakaz)
 		mViewPager.setAdapter(mSectionsPagerAdapter)
 		mViewPager.addOnPageChangeListener(this)
 		indicator.setNumberOfItems(mSectionsPagerAdapter.getCount)
 
-//		indicator.check(0,lastProfile.checkPhone)
-//		indicator.check(1,lastProfile.checkName)
-//		indicator.check(2,lastProfile.checkAddress)
+		//		indicator.check(0,lastProfile.checkPhone)
+		//		indicator.check(1,lastProfile.checkName)
+		//		indicator.check(2,lastProfile.checkAddress)
 
 		indicator.setDotClickListener(this)
 
 
-		Seq(R.id.nextBtn,R.id.completeBtn).foreach(addClick(_,this))
+		Seq(R.id.nextBtn, R.id.completeBtn).foreach(addClick(_, this))
 
 		onPageSelected(0)
 		setupToolBarWithBackButton(R.id.toolbar)
@@ -75,34 +75,33 @@ class ActivityCreateZakaz extends BusActivity
 
 	override def onSaveInstanceState(outState: Bundle): Unit = {
 		super.onSaveInstanceState(outState)
-		outState.putBoolean(SAVE_COMPLETE_VISIBLE,completeLayout.getVisibility==View.VISIBLE)
+		outState.putBoolean(SAVE_COMPLETE_VISIBLE, completeLayout.getVisibility == View.VISIBLE)
 	}
 
 
 	override def onRestoreInstanceState(savedInstanceState: Bundle): Unit = {
 		super.onRestoreInstanceState(savedInstanceState)
-		U.gone(completeLayout,savedInstanceState.getBoolean(SAVE_COMPLETE_VISIBLE))
+		U.gone(completeLayout, savedInstanceState.getBoolean(SAVE_COMPLETE_VISIBLE))
 
 	}
 
-	def restoreResult(): Unit ={
+	def restoreResult(): Unit = {
 
 
-
-		UU.visible(progressBar,layoutResult,lastProfile.progressState==1)
-		if (Program.isZakazComplete(lastProfile.progressState)){
-			U.text(resultTitle,R.string.createZakazCompleteName)
-			U.text(resultMessage,R.string.createZakazCompleteText)
+		UU.visible(progressBar, layoutResult, lastProfile.progressState == 1)
+		if (Program.isZakazComplete(lastProfile.progressState)) {
+			U.text(resultTitle, R.string.createZakazCompleteName)
+			U.text(resultMessage, R.string.createZakazCompleteText)
 
 			if (resultTitle != null) {
 				val imm = getSystemService(Context.INPUT_METHOD_SERVICE).asInstanceOf[InputMethodManager]
 				imm.hideSoftInputFromWindow(resultTitle.getWindowToken, 0)
 			}
 			if (Program.isZakazComplete(lastProfile.progressState))
-				setResult(Activity.RESULT_OK,null)
-		}else{
-			U.text(resultTitle,R.string.createZakazErrorName)
-			U.text(resultMessage,R.string.createZakazErrorText)
+				setResult(Activity.RESULT_OK, null)
+		} else {
+			U.text(resultTitle, R.string.createZakazErrorName)
+			U.text(resultMessage, R.string.createZakazErrorText)
 		}
 	}
 
@@ -111,12 +110,12 @@ class ActivityCreateZakaz extends BusActivity
 			case android.R.id.home ⇒
 				onBackPressed()
 			case _ ⇒
-				return super.onOptionsItemSelected (item)
+				return super.onOptionsItemSelected(item)
 		}
 		true
 	}
 
-	override def onBackPressed(): Unit ={
+	override def onBackPressed(): Unit = {
 
 		super.onBackPressed()
 	}
@@ -136,15 +135,21 @@ class ActivityCreateZakaz extends BusActivity
 
 		private[this] val items = new util.ArrayList[View]
 		private[this] val inflater: LayoutInflater = LayoutInflater.from(context)
-		private[this] val nextActionListener: TextView.OnEditorActionListener = { (v: TextView, actionId: Int, event: KeyEvent) ⇒
+		private[this] val nextActionListener: TextView.OnEditorActionListener =
+			new TextView.OnEditorActionListener {
+				override def onEditorAction(v: TextView, actionId: Int, event: KeyEvent): Boolean = {
+					nextPage()
+					false
+				}
+			}
 
-			nextPage()
-			false
-		}
+		private[this] val doneActionListener: TextView.OnEditorActionListener =
+			new TextView.OnEditorActionListener {
+				override def onEditorAction(v: TextView, actionId: Int, event: KeyEvent): Boolean = {
 
-		private[this] val doneActionListener: TextView.OnEditorActionListener = { (v: TextView, actionId: Int, event: KeyEvent) ⇒
-			false
-		}
+					false
+				}
+			}
 
 		var i: Int = 0
 		while (i < getCount) {
@@ -157,12 +162,12 @@ class ActivityCreateZakaz extends BusActivity
 				val image: ImageView = rootView.findViewById(R.id.image).asInstanceOf[ImageView]
 
 				if (i == getCount - 1) {
-					edit.setImeOptions(EditorInfo.IME_ACTION_DONE|EditorInfo.IME_FLAG_NO_EXTRACT_UI)
+					edit.setImeOptions(EditorInfo.IME_ACTION_DONE | EditorInfo.IME_FLAG_NO_EXTRACT_UI)
 					edit.setOnEditorActionListener(doneActionListener)
 
 				}
 				else {
-					edit.setImeOptions(EditorInfo.IME_ACTION_NEXT|EditorInfo.IME_FLAG_NO_EXTRACT_UI)
+					edit.setImeOptions(EditorInfo.IME_ACTION_NEXT | EditorInfo.IME_FLAG_NO_EXTRACT_UI)
 					edit.setOnEditorActionListener(nextActionListener)
 
 				}
@@ -176,8 +181,8 @@ class ActivityCreateZakaz extends BusActivity
 						edit.addTextChangedListener(new PhoneNumberFormattingTextWatcher())
 						edit.addTextChangedListener(new SimpleTextWatcher {
 							override def afterTextChanged(editable: Editable): Unit = {
-								lastProfile.phone=editable.toString
-							//	indicator.check(0,lastProfile.checkPhone)
+								lastProfile.phone = editable.toString
+								//	indicator.check(0,lastProfile.checkPhone)
 							}
 						})
 						edit.setText(lastProfile.phone)
@@ -189,7 +194,7 @@ class ActivityCreateZakaz extends BusActivity
 						edit.setInputType(InputType.TYPE_CLASS_TEXT)
 						edit.addTextChangedListener(new SimpleTextWatcher {
 							override def afterTextChanged(editable: Editable): Unit = {
-								lastProfile.name=editable.toString
+								lastProfile.name = editable.toString
 								//indicator.check(1,lastProfile.checkName)
 							}
 						})
@@ -202,8 +207,8 @@ class ActivityCreateZakaz extends BusActivity
 						edit.setInputType(InputType.TYPE_CLASS_TEXT)
 						edit.addTextChangedListener(new SimpleTextWatcher {
 							override def afterTextChanged(editable: Editable): Unit = {
-								lastProfile.address=editable.toString
-							//	indicator.check(2,lastProfile.checkAddress)
+								lastProfile.address = editable.toString
+								//	indicator.check(2,lastProfile.checkAddress)
 								checkCompleteBtn()
 							}
 						})
@@ -223,13 +228,13 @@ class ActivityCreateZakaz extends BusActivity
 			rootView
 		}
 
-		private def nextItem {
+		private def nextItem:Unit = {
 		}
 
-		def starData {
+		def starData:Unit = {
 		}
 
-		override def destroyItem(container: ViewGroup, position: Int, `object`: AnyRef) {
+		override def destroyItem(container: ViewGroup, position: Int, `object`: AnyRef):Unit = {
 			container.removeView(`object`.asInstanceOf[View])
 		}
 
@@ -246,19 +251,19 @@ class ActivityCreateZakaz extends BusActivity
 		}
 	}
 
-	def onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+	def onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int):Unit = {
 	}
 
-	def onPageSelected(position: Int) {
+	def onPageSelected(position: Int):Unit = {
 		indicator.setSelectedItem(position, true)
-		for (i ← 0 until 2){
-			indicator.check(i,i<position)
+		for (i ← 0 until 2) {
+			indicator.check(i, i < position)
 		}
 
 
 		val v: View = mViewPager.findViewById(position + SECTION_ID)
 		if (v != null) {
-			v.findViewById(R.id.edit).requestFocus
+			v.findViewById[View](R.id.edit).requestFocus
 		}
 
 		if (position == mSectionsPagerAdapter.getCount() - 1) {
@@ -284,7 +289,7 @@ class ActivityCreateZakaz extends BusActivity
 
 	}
 
-	def onDotClick(index: Int) {
+	def onDotClick(index: Int):Unit = {
 		mViewPager.setCurrentItem(index)
 	}
 
@@ -294,17 +299,17 @@ class ActivityCreateZakaz extends BusActivity
 
 				if (nextPage()) {
 					completeLayout.setVisibility(View.VISIBLE)
-					lastProfile.progressState=1
-			    //		getWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
+					lastProfile.progressState = 1
+					//		getWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
 
 					restoreResult()
 
-					ProgramRun.addOrder(lastProfile,lastKorzina)
+					ProgramRun.addOrder(lastProfile, lastKorzina)
 				}
 
 			case R.id.completeBtn ⇒
 				if (Program.isZakazComplete(lastProfile.progressState))
-					setResult(Activity.RESULT_OK,null)
+					setResult(Activity.RESULT_OK, null)
 				finish()
 			case _ ⇒
 		}
@@ -318,15 +323,14 @@ class ActivityCreateZakaz extends BusActivity
 		newIndex == mSectionsPagerAdapter.getCount
 	}
 
-	def checkCompleteBtn(): Unit ={
+	def checkCompleteBtn(): Unit = {
 		nextBtn.setEnabled(lastProfile.completeAll)
 	}
 
 	@Subscribe
-	def zakazStateUpdate(updater: UpdateZakaz): Unit ={
+	def zakazStateUpdate(updater: UpdateZakaz): Unit = {
 		restoreResult()
 	}
-
 
 
 }

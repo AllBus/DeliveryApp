@@ -19,7 +19,7 @@ class ProductActivity extends BusActivity with OnClickListener{
 	lazy val id=getID
 	lazy val product=DataStore.products.get(id)
 
-	protected override def onCreate(savedInstanceState: Bundle) {
+	protected override def onCreate(savedInstanceState: Bundle):Unit = {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_product_v2)
 
@@ -30,7 +30,7 @@ class ProductActivity extends BusActivity with OnClickListener{
 
 
 		val addToTashClick=	new View.OnClickListener() {
-			def onClick(view: View) {
+			def onClick(view: View):Unit = {
 				lastKorzina.add(product.getId, product.getPricesCurrent, 1)
 				saveData(lastKorzina)
 				updateKorzina()
